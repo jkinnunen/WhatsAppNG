@@ -37,3 +37,13 @@ locale/**/*.mo
 # Keep base language files as per gitignore in addon template
 locale/en/LC_MESSAGES/nvda.po
 locale/en/LC_MESSAGES/nvda.mo
+
+# Gettext / Translation tools
+msgfmt.exe
+libgettextlib.dll
+libgettextsrc.dll
+libiconv2.dll
+libintl3.dll
+
+# Claude AI
+.claude/
