@@ -26,7 +26,8 @@ addon_info = AddonInfo(
 	addon_version="1.3.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""- Turkish translation support.
+	addon_changelog=_("""- Fixed Control+R to work only on text messages.
+- Turkish translation support.
 - Toggle automatic Focus Mode option.
 - Improved navigation performance.
 - Video playback with Enter key.

@@ -50,6 +50,11 @@ msgstr "Nenhuma mensagem de voz encontrada"
 msgid "Read complete message (clicks 'read more' button)"
 msgstr "Ler mensagem completa (clica no botão 'ler mais')"
 
+#. Not a text message
+#: addon/appModules/whatsapp_root.py:480
+msgid "Not a text message"
+msgstr "Não é uma mensagem de texto"
+
 #: addon/appModules/whatsapp_root.py:458
 msgid "No message found"
 msgstr "Nenhuma mensagem encontrada"

@@ -471,6 +471,16 @@ class AppModule(appModuleHandler.AppModule):
 				return
 
 			focus = api.getFocusObject()
+
+			# Check if this is a text message by looking for "…" in the name
+			# Text messages contain "…" while voice messages, images, etc. don't
+			focus_name = getattr(focus, "name", "") or ""
+			if "…" not in focus_name:
+				# Not a text message
+				ui.message(_("Not a text message"))
+				gesture.send()
+				return
+
 			parent = getattr(focus, "parent", None)
 			if not parent:
 				ui.message(_("No message found"))
@@ -561,43 +571,55 @@ class AppModule(appModuleHandler.AppModule):
 
 					collect_buttons_until_collapsed(sibling)
 
-					# Find the FIRST FOCUSABLE button (16777216)
+					# Filter only FOCUSABLE buttons (16777216)
+					focusable_buttons = []
 					for btn in all_buttons:
 						states = getattr(btn, "states", set())
 						if 16777216 in states:  # FOCUSABLE
-							# This is the "read more" button! Click it
-							btn.doAction()
-							# Wait for text to load, then speak
-							def speak_after_click():
-								new_longest = ""
-								for sib in siblings:
-									def find_new_longest(o):
-										nonlocal new_longest
-										try:
-											r = _role(o)
-											if r is None:
-												return
-											if r == controlTypes.Role.STATICTEXT:
-												n = getattr(o, "name", "") or ""
-												if n and len(n.strip()) > len(new_longest):
-													new_longest = n.strip()
-											v = getattr(o, "value", "") or ""
-											if v and len(str(v).strip()) > len(new_longest):
-												new_longest = str(v).strip()
-											ch = getattr(o, "children", []) or []
-											for c in ch:
-												find_new_longest(c)
-										except Exception:
-											pass
-									find_new_longest(sib)
+							focusable_buttons.append(btn)
 
-								if new_longest and len(new_longest) > 800:
-									ui.message(new_longest)
-								else:
-									ui.message(_("Text not found"))
+					# "Ler mais" is usually the SECOND focusable button
+					# If only 1 focusable, use it
+					if len(focusable_buttons) >= 2:
+						read_more_btn = focusable_buttons[1]
+					elif len(focusable_buttons) == 1:
+						read_more_btn = focusable_buttons[0]
+					else:
+						continue  # No focusable buttons, try next sibling
 
-							wx.CallLater(500, speak_after_click)
-							return  # Done!
+					# Click the "read more" button
+					read_more_btn.doAction()
+					# Wait for text to load, then speak
+					def speak_after_click():
+						new_longest = ""
+						for sib in siblings:
+							def find_new_longest(o):
+								nonlocal new_longest
+								try:
+									r = _role(o)
+									if r is None:
+										return
+									if r == controlTypes.Role.STATICTEXT:
+										n = getattr(o, "name", "") or ""
+										if n and len(n.strip()) > len(new_longest):
+											new_longest = n.strip()
+									v = getattr(o, "value", "") or ""
+									if v and len(str(v).strip()) > len(new_longest):
+										new_longest = str(v).strip()
+									ch = getattr(o, "children", []) or []
+									for c in ch:
+										find_new_longest(c)
+								except Exception:
+									pass
+							find_new_longest(sib)
+
+						if new_longest and len(new_longest) > 800:
+							ui.message(new_longest)
+						else:
+							ui.message(_("Text not found"))
+
+					wx.CallLater(500, speak_after_click)
+					return  # Done!
 
 		except Exception:
 			gesture.send()
