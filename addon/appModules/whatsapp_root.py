@@ -9,6 +9,7 @@ import re
 import addonHandler
 import wx
 import treeInterceptorHandler
+import speech
 
 try:
 	from controlTypes import Role
@@ -488,33 +489,40 @@ class AppModule(appModuleHandler.AppModule):
 
 			siblings = getattr(parent, "children", []) or []
 
-			# FIRST: Check if complete text already exists (> 800 chars)
-			longest_text = ""
+			# FIRST: Check if complete text already exists by collecting all parts
+			all_text_parts = []
 			for sibling in siblings:
-				def find_longest(obj):
-					nonlocal longest_text
+				def collect_texts(obj):
 					try:
 						role = _role(obj)
 						if role is None:
 							return
 						if role == controlTypes.Role.STATICTEXT:
 							name = getattr(obj, "name", "") or ""
-							if name and len(name.strip()) > len(longest_text):
-								longest_text = name.strip()
+							if name:
+								clean = name.strip()
+								# Filter out non-content labels
+								if clean and not clean.startswith("00:") and len(clean) > 20:
+									all_text_parts.append(clean)
 						value = getattr(obj, "value", "") or ""
-						if value and len(str(value).strip()) > len(longest_text):
-							longest_text = str(value).strip()
+						if value:
+							clean_v = str(value).strip()
+							if len(clean_v) > 20:
+								all_text_parts.append(clean_v)
 						children = getattr(obj, "children", []) or []
 						for child in children:
-							find_longest(child)
+							collect_texts(child)
 					except Exception:
 						pass
 
-				find_longest(sibling)
+				collect_texts(sibling)
 
-			# If complete text already exists, read it and done
-			if len(longest_text) > 800:
-				ui.message(longest_text)
+			# Combine all text parts
+			existing_text = " ".join(all_text_parts)
+
+			# If complete text already exists (> 800 chars), read it and done
+			if len(existing_text) > 800:
+				ui.message(existing_text)
 				return
 
 			# SECOND: Complete text not found, search for "read more" button
@@ -589,32 +597,46 @@ class AppModule(appModuleHandler.AppModule):
 
 					# Click the "read more" button
 					read_more_btn.doAction()
+					# Cancel speech immediately after click to stop any announcement
+					wx.CallLater(50, speech.cancelSpeech)
 					# Wait for text to load, then speak
-					def speak_after_click():
-						new_longest = ""
-						for sib in siblings:
-							def find_new_longest(o):
-								nonlocal new_longest
-								try:
-									r = _role(o)
-									if r is None:
-										return
-									if r == controlTypes.Role.STATICTEXT:
-										n = getattr(o, "name", "") or ""
-										if n and len(n.strip()) > len(new_longest):
-											new_longest = n.strip()
-									v = getattr(o, "value", "") or ""
-									if v and len(str(v).strip()) > len(new_longest):
-										new_longest = str(v).strip()
-									ch = getattr(o, "children", []) or []
-									for c in ch:
-										find_new_longest(c)
-								except Exception:
-									pass
-							find_new_longest(sib)
+					# Store parent reference to re-fetch siblings after expansion
+					message_parent = parent
 
-						if new_longest and len(new_longest) > 800:
-							ui.message(new_longest)
+					def speak_after_click():
+						# Re-fetch siblings from parent after text expansion
+						# This ensures we get the updated DOM, not stale cached objects
+						all_text_parts = []
+						try:
+							updated_siblings = getattr(message_parent, "children", []) or []
+							for sib in updated_siblings:
+								def collect_texts(o):
+									try:
+										r = _role(o)
+										if r is None:
+											return
+										if r == controlTypes.Role.STATICTEXT:
+											n = getattr(o, "name", "") or ""
+											if n:
+												clean = n.strip()
+												# Filter out non-content labels
+												if clean and not clean.startswith("00:") and len(clean) > 20:
+													all_text_parts.append(clean)
+										ch = getattr(o, "children", []) or []
+										for c in ch:
+											collect_texts(c)
+									except Exception:
+										pass
+								collect_texts(sib)
+						except Exception:
+							pass
+
+						# Combine all text parts
+						full_text = " ".join(all_text_parts)
+
+						# Check if we found expanded text
+						if full_text and len(full_text) > 300:
+							ui.message(full_text)
 						else:
 							ui.message(_("Text not found"))
 
