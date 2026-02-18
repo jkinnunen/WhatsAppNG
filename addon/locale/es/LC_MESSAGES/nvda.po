@@ -1,0 +1,237 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2026-02-11 22:47+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: addon/appModules/whatsapp_root.py:45
+msgid "WhatsApp NG"
+msgstr "WhatsApp NG"
+
+#: addon/appModules/whatsapp_root.py:283
+msgid "Copy current message to clipboard"
+msgstr "Copiar el mensaje actual al portapapeles"
+
+#: addon/appModules/whatsapp_root.py:324 addon/appModules/whatsapp_root.py:352
+#: addon/appModules/whatsapp_root.py:364
+msgid "Copied"
+msgstr "Copiado"
+
+#. Not a message or couldn't copy
+#: addon/appModules/whatsapp_root.py:368
+msgid "Cannot copy"
+msgstr "No se puede copiar"
+
+#: addon/appModules/whatsapp_root.py:372
+msgid "Play voice message"
+msgstr "Reproducir mensaje de voz"
+
+#. No slider or button found
+#: addon/appModules/whatsapp_root.py:386 addon/appModules/whatsapp_root.py:455
+#: addon/appModules/whatsapp_root.py:458
+msgid "No audio message found"
+msgstr "No se encontró ningún mensaje de audio"
+
+#. Translators: Read complete message (click "read more" and speak text)
+#: addon/appModules/whatsapp_root.py:462
+msgid "Read complete message (clicks 'read more' button)"
+msgstr "Leer mensaje completo (clic en 'leer más')"
+
+#. Not a text message
+#: addon/appModules/whatsapp_root.py:480
+#| msgid "Play voice message"
+msgid "Not a text message"
+msgstr "No es un mensaje de texto"
+
+#: addon/appModules/whatsapp_root.py:486
+#| msgid "Message list not found"
+msgid "No message found"
+msgstr "No se encontró ningún mensaje"
+
+#: addon/appModules/whatsapp_root.py:619
+#| msgid "Message list not found"
+msgid "Text not found"
+msgstr "Texto no encontrado"
+
+#: addon/appModules/whatsapp_root.py:628
+msgid "Open context menu"
+msgstr "Abrir menú contextual"
+
+#: addon/appModules/whatsapp_root.py:642 addon/appModules/whatsapp_root.py:672
+#: addon/appModules/whatsapp_root.py:675
+msgid "No menu found"
+msgstr "No se encontró ningún menú"
+
+#: addon/appModules/whatsapp_root.py:678
+msgid "Focus message composer"
+msgstr "Enfocar el cuadro de edición de mensajes"
+
+#: addon/appModules/whatsapp_root.py:690 addon/appModules/whatsapp_root.py:751
+#: addon/appModules/whatsapp_root.py:753
+msgid "Message composer not found"
+msgstr "No se encontró el cuadro de edición de mensajes"
+
+#: addon/appModules/whatsapp_root.py:918
+msgid "Go to WhatsApp conversation list"
+msgstr "Ir a la lista de conversaciones de WhatsApp"
+
+#: addon/appModules/whatsapp_root.py:952 addon/appModules/whatsapp_root.py:1008
+#: addon/appModules/whatsapp_root.py:1011
+msgid "Conversation list not found"
+msgstr "No se encontró la lista de conversaciones"
+
+#: addon/appModules/whatsapp_root.py:1024
+msgid "Go to WhatsApp message list"
+msgstr "Ir a la lista de mensajes de WhatsApp"
+
+#: addon/appModules/whatsapp_root.py:1036
+#: addon/appModules/whatsapp_root.py:1092
+msgid "Message list not found"
+msgstr "No se encontró la lista de mensajes"
+
+#: addon/appModules/whatsapp_root.py:1105
+msgid "Toggle phone number filtering in conversation list"
+msgstr ""
+"Alternar el filtrado de números de teléfono en la lista de conversaciones"
+
+#: addon/appModules/whatsapp_root.py:1111
+msgid "Use this command in the conversation list"
+msgstr "Usa este comando en la lista de conversaciones"
+
+#: addon/appModules/whatsapp_root.py:1120
+msgid "Conversation list: phone numbers hidden"
+msgstr "Lista de conversaciones: números de teléfono ocultos"
+
+#: addon/appModules/whatsapp_root.py:1122
+msgid "Conversation list: phone numbers visible"
+msgstr "Lista de conversaciones: números de teléfono visibles"
+
+#: addon/appModules/whatsapp_root.py:1127
+msgid "Toggle phone number filtering in message list"
+msgstr "Alternar el filtrado de números de teléfono en la lista de mensajes"
+
+#: addon/appModules/whatsapp_root.py:1133
+msgid "Use this command in the message list"
+msgstr "Usa este comando en la lista de mensajes"
+
+#: addon/appModules/whatsapp_root.py:1142
+msgid "Message list: phone numbers hidden"
+msgstr "Lista de mensajes: números de teléfono ocultos"
+
+#: addon/appModules/whatsapp_root.py:1144
+msgid "Message list: phone numbers visible"
+msgstr "Lista de mensajes: números de teléfono visibles"
+
+#: addon/appModules/whatsapp_root.py:1156
+msgid "Toggle automatic Focus Mode"
+msgstr "Alternar el modo foco automático"
+
+#: addon/appModules/whatsapp_root.py:1166
+msgid "Auto Focus Mode: enabled"
+msgstr "Modo foco automático: activado"
+
+#: addon/appModules/whatsapp_root.py:1168
+msgid "Auto Focus Mode: disabled"
+msgstr "Modo foco automático: desactivado"
+
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
+msgid "WhatsApp Desktop accessibility enhancements"
+msgstr "WhatsApp Desktop accessibility enhancements"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+msgid ""
+"Provides accessibility improvements for the web-based WhatsApp Desktop, "
+"including navigation shortcuts, message interaction enhancements, and better "
+"screen reader support."
+msgstr ""
+"Proporciona mejoras de accesibilidad para la versión de escritorio de "
+"WhatsApp basada en web, incluyendo atajos de navegación, mejoras en la "
+"interacción con los mensajes y un soporte optimizado para el lector de "
+"pantalla."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid ""
+"- Turkish translation support.\n"
+"- Toggle automatic Focus Mode option.\n"
+"- Improved navigation performance.\n"
+"- Video playback with Enter key.\n"
+"- Escape key now passes through correctly."
+msgstr ""
+"- Turkish translation support.\n"
+"- Toggle automatic Focus Mode option.\n"
+"- Improved navigation performance.\n"
+"- Video playback with Enter key.\n"
+"- Escape key now passes through correctly."
+
+#~ msgid ""
+#~ "Initial release.\n"
+#~ "- Navigation shortcuts for conversation list, message list, and message "
+#~ "composer.\n"
+#~ "- Voice message playback with support for individual chats and groups.\n"
+#~ "- Context menu access for message actions.\n"
+#~ "- Phone number filtering toggle for conversations and messages.\n"
+#~ "- Automatic focus mode activation in WhatsApp Desktop."
+#~ msgstr ""
+#~ "Lanzamiento inicial.\n"
+#~ "- Atajos de navegación para la lista de conversaciones, la lista de "
+#~ "mensajes y el cuadro de redacción.\n"
+#~ "- Reproducción de mensajes de voz con soporte para chats individuales y "
+#~ "grupos.\n"
+#~ "- Acceso al menú contextual para acciones sobre mensajes.\n"
+#~ "- Alternar el filtrado de números de teléfono en conversaciones y "
+#~ "mensajes.\n"
+#~ "- Activación automática del modo foco en WhatsApp Desktop."
+
+#~ msgid "Conversation list: {status}, Message list: {status2}"
+#~ msgstr "Lista de conversaciones: {status}, Lista de mensajes: {status2}"
+
+#~ msgid "enabled"
+#~ msgstr "activado"
+
+#~ msgid "disabled"
+#~ msgstr "desactivado"
+
+#~ msgid "Error: {error}"
+#~ msgstr "Error: {error}"
+
+#~ msgid "No parent"
+#~ msgstr "Sin elemento padre"
+
+#~ msgid "No tree interceptor"
+#~ msgstr "Sin interceptor de árbol"
+
+#~ msgid "{n} siblings"
+#~ msgstr "{n} elementos hermanos"
+
+#~ msgid "Sibling {n}: {count} buttons"
+#~ msgstr "Hermano {n}: {count} botones"
+
+#~ msgid "  Button {n}: {name} {state}"
+#~ msgstr "  Botón {n}: {name} {state}"
+
+#~ msgid "Role {role}, [{path}], {focusable}, {name}"
+#~ msgstr "Rol {role}, [{path}], {focusable}, {name}"
+
+#~ msgid "Config: Conversations={val}, Messages={val2}"
+#~ msgstr "Configuración: Conversaciones={val}, Mensajes={val2}"
+
+#~ msgid "focusable"
+#~ msgstr "enfocable"
+
+#~ msgid "not focusable"
+#~ msgstr "no enfocable"
