@@ -616,6 +616,42 @@ class AppModule(appModuleHandler.AppModule):
 			ui.message(_("No menu found"))
 
 	@scriptHandler.script(
+		description=_("React to message"),
+		gesture="kb:control+shift+enter"
+	)
+	def script_reactMessage(self, gesture):
+		"""Control+Shift+Enter: React to message (opens reaction menu)."""
+		try:
+			# Only works in message list
+			if not self._isMessageListFocus():
+				gesture.send()
+				return
+
+			focus = api.getFocusObject()
+			parent = getattr(focus, "parent", None)
+			if not parent:
+				gesture.send()
+				return
+
+			siblings = getattr(parent, "children", [])
+
+			for sibling in siblings:
+				all_buttons = self._findButtons(sibling)
+				# Find COLLAPSED index, then get next button
+				for i, btn in enumerate(all_buttons):
+					states = getattr(btn, "states", set())
+					if 512 in states:  # COLLAPSED
+						# Next button is the react button
+						if i + 1 < len(all_buttons):
+							all_buttons[i + 1].doAction()
+							return
+
+			gesture.send()
+
+		except Exception:
+			gesture.send()
+
+	@scriptHandler.script(
 		description=_("Focus message composer"),
 		gesture="kb:alt+d"
 	)

@@ -11,6 +11,7 @@ Web tabanlı WhatsApp Masaüstü için erişilebilirlik iyileştirmeleri sağlay
 * **Shift+Enter**: Mesaj bağlam menüsünü aç
 * **Control+C**: Geçerli mesajı panoya kopyala
 * **Control+R**: Mesajın tamamını oku (gerekirse "devamını oku" düğmesine tıklar)
+* **Control+Shift+Enter**: Mesajı tepki ver
 
 ### Geçiş Komutları (varsayılan kısayol yoktur – Girdi Hareketleri'nden yapılandırılır)
 

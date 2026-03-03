@@ -11,6 +11,7 @@ Componente aggiuntivo per NVDA che fornisce migliorie di accessibilità per What
 - **Shift+Enter**: Apri il menu contestuale del messaggio
 - **Control+C**: Copia il messaggio attuale negli appunti
 - **Control+R**: Leggi il messaggio completo (clicca il pulsante "Leggi di più" se necessario)
+- **Control+Shift+Enter**: Reagire al messaggio
 
 ### Scripts da attivare o disattivare (nessun tasto predefinito, configurare in "Gesti e tasti di immissione")
 

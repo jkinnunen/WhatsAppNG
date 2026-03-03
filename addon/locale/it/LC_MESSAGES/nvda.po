@@ -67,6 +67,11 @@ msgstr "Testo non trovato"
 msgid "Open context menu"
 msgstr "Apri il menu contestuale"
 
+#. Translators: React to message (opens reaction menu)
+#: addon\appModules\whatsapp_root.py:619
+msgid "React to message"
+msgstr "Reagire al messaggio"
+
 #: addon\appModules\whatsapp_root.py:643 addon\appModules\whatsapp_root.py:673
 #: addon\appModules\whatsapp_root.py:676
 msgid "No menu found"

@@ -11,6 +11,7 @@ NVDA-Add-on, das Barrierefreiheitsverbesserungen für die webbasierte WhatsApp-D
 - **Umschalt+Enter**: Kontextmenü für Nachrichten öffnen
 - **Strg+C**: Aktuelle Nachricht in die Zwischenablage kopieren
 - **Strg+R**: Vollständige Nachricht vorlesen (klickt bei Bedarf auf "Mehr lesen"-Schaltfläche)
+- **Strg+Umschalt+Enter**: Auf Nachricht reagieren
 
 ### Umschalt-Skripte (keine Standard-Tastenkürzel - in Eingabegesten konfigurieren)
 

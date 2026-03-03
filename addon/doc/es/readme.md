@@ -11,6 +11,7 @@ Complemento para NVDA que proporciona mejoras de accesibilidad para la versión 
 - **Shift+Enter**: Abrir el menú contextual del mensaje
 - **Control+C**: Copiar el mensaje actual al portapapeles
 - **Control+R**: Leer el mensaje completo (hace clic en el botón "leer más" si es necesario)
+- **Control+Shift+Enter**: Reaccionar al mensaje
 
 ### Scripts conmutables (sin atajo predeterminado - configurar en Gestos de entrada)
 

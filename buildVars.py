@@ -26,7 +26,7 @@ addon_info = AddonInfo(
 	addon_version="1.5.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""),
+	addon_changelog=_(""""""),
 	# Author(s)
 	addon_author="Nuno Costa <nrfcosta21@gmail.com>",
 	# URL for the add-on documentation support

@@ -136,3 +136,8 @@ msgstr ""
 
 msgid "not focusable"
 msgstr ""
+
+#. Translators: React to message (opens reaction menu)
+#: addon/appModules/whatsapp_root.py:619
+msgid "React to message"
+msgstr ""

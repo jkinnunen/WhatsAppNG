@@ -11,6 +11,7 @@ Complemento NVDA que fornece melhorias de acessibilidade para o WhatsApp Desktop
 - **Shift+Enter**: Abrir menu de contexto da mensagem
 - **Control+C**: Copiar mensagem atual para a área de transferência
 - **Control+R**: Ler mensagem completa (clica no botão "ler mais" se necessário)
+- **Control+Shift+Enter**: Reagir à mensagem
 
 ### Scripts de Alternância (sem atalho padrão - configure em Gestos de Entrada)
 

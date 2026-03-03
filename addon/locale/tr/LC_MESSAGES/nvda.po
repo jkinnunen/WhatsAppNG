@@ -67,6 +67,11 @@ msgstr "Metin bulunamadı"
 msgid "Open context menu"
 msgstr "Bağlam menüsünü aç"
 
+#. Translators: React to message (opens reaction menu)
+#: addon\appModules\whatsapp_root.py:619
+msgid "React to message"
+msgstr "Mesaja tepki ver"
+
 #: addon\appModules\whatsapp_root.py:643 addon\appModules\whatsapp_root.py:673
 #: addon\appModules\whatsapp_root.py:676
 msgid "No menu found"

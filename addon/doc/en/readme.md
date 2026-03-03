@@ -11,6 +11,7 @@ NVDA add-on that provides accessibility enhancements for the web-based WhatsApp 
 - **Shift+Enter**: Open message context menu
 - **Control+C**: Copy current message to clipboard
 - **Control+R**: Read complete message (clicks "read more" button if needed)
+- **Control+Shift+Enter**: React to message
 
 ### Toggle Scripts (no default shortcut - configure in Input Gestures)
 
