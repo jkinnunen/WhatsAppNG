@@ -451,7 +451,7 @@ class AppModule(appModuleHandler.AppModule):
 			for sibling in siblings:
 				slider_obj = self._findSlider(sibling)
 				if slider_obj:
-					all_buttons, _ = self._collectButtonsUntil(sibling, slider_obj)
+					all_buttons, _found = self._collectButtonsUntil(sibling, slider_obj)
 					if all_buttons:
 						all_buttons[-1].doAction()
 						return
@@ -503,7 +503,7 @@ class AppModule(appModuleHandler.AppModule):
 		for sibling in siblings:
 			collapsed_obj = self._findCollapsed(sibling)
 			if collapsed_obj:
-				all_buttons, _ = self._collectButtonsUntil(sibling, collapsed_obj)
+				all_buttons, _found = self._collectButtonsUntil(sibling, collapsed_obj)
 
 				focusable_buttons = []
 				for btn in all_buttons:
