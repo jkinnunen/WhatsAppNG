@@ -18,6 +18,51 @@ Componente aggiuntivo per NVDA che fornisce migliorie di accessibilità per What
 - Attiva/disattiva il filtraggio dei messaggi nella lista dei messaggi
 - Attiva / disattiva la modalità focus automatica (seleziona modalità navigazione se necessario)
 
+## Scorciatoie da tastiera native di WhatsApp Desktop
+
+- Segna come non letto: Ctrl+Shift+U
+- Disattiva notifiche: Ctrl+Shift+M
+- Archivia chat: Ctrl+Shift+A
+- Fissa chat: Ctrl+Alt+Shift+P
+- Cerca: Ctrl+Alt+/
+- Cerca nella conversazione: Ctrl+Shift+F
+- Nuova chat: Ctrl+Alt+N
+- Chat successiva: Ctrl+]
+- Chat precedente: Ctrl+[
+- Aggiungi etichetta alla chat: Ctrl+Cmd+Shift+L
+- Chiudi chat: Escape
+- Nuovo gruppo: Ctrl+Shift+N
+- Profilo e Info: Ctrl+Alt+P
+- Aumenta velocità messaggio vocale: Shift+.
+- Diminuisci velocità messaggio vocale: Shift+,
+- Impostazioni: Alt+S
+- Pannello emoji: Ctrl+Alt+E
+- Pannello GIF: Ctrl+Alt+G
+- Pannello sticker: Ctrl+Alt+S
+- Ricerca estesa: Alt+K
+- Blocca app: Alt+L
+- Apri dettagli chat: Alt+I
+- Blocca chat: Ctrl+Shift+B
+- Rispondi: Alt+R
+- Rispondi in privato: Ctrl+Alt+R
+- Inoltra: Ctrl+Alt+D
+- Messaggio con stella: Alt+8
+- Apri menu allegati: Alt+A
+- Avvia registrazione PTT: Ctrl+Alt+Shift+R
+- Metti in pausa registrazione PTT: Alt+P
+- Invia PTT: Ctrl+Enter
+- Modifica ultimo messaggio: Ctrl+Freccia Su
+- Attiva/Disattiva fotocamera: Ctrl+Alt+V
+- Silenzia/Riattiva: Ctrl+Alt+M
+- Reazioni: Ctrl+Alt+R
+- Alza la mano: Ctrl+Alt+H
+- Condivisione schermo: Ctrl+Alt+S
+- Termina chiamata: Ctrl+Alt+W
+- Aumenta zoom: Ctrl++
+- Diminuisci zoom: Ctrl+-
+- Ripristina zoom: Ctrl+0
+- Apri chat: Ctrl+1..9
+
 ## Requisiti
 
 - NVDA 2021.1 o superiore

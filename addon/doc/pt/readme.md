@@ -18,6 +18,51 @@ Complemento NVDA que fornece melhorias de acessibilidade para o WhatsApp Desktop
 - Alternar filtragem de números de telefone na lista de mensagens
 - Alternar Modo de Foco automático (permite usar Browse Mode quando necessário)
 
+## Atalhos de teclado nativos do WhatsApp Desktop
+
+- Marcar como não lida: Ctrl+Shift+U
+- Desativar notificações: Ctrl+Shift+M
+- Arquivar conversa: Ctrl+Shift+A
+- Afixar conversa: Ctrl+Alt+Shift+P
+- Pesquisar: Ctrl+Alt+/
+- Pesquisar na conversa: Ctrl+Shift+F
+- Nova conversa: Ctrl+Alt+N
+- Conversa seguinte: Ctrl+]
+- Conversa anterior: Ctrl+[
+- Adicionar etiqueta à conversa: Ctrl+Cmd+Shift+L
+- Fechar conversa: Escape
+- Novo grupo: Ctrl+Shift+N
+- Perfil e Sobre: Ctrl+Alt+P
+- Aumentar a velocidade da mensagem de voz selecionada: Shift+.
+- Diminuir a velocidade da mensagem de voz selecionada: Shift+,
+- Definições: Alt+S
+- Painel de emojis: Ctrl+Alt+E
+- Painel de GIF: Ctrl+Alt+G
+- Painel dos stickers: Ctrl+Alt+S
+- Pesquisa alargada: Alt+K
+- Bloquear a app: Alt+L
+- Abrir detalhes da conversa: Alt+I
+- Bloquear conversa: Ctrl+Shift+B
+- Responder: Alt+R
+- Responder em privado: Ctrl+Alt+R
+- Reencaminhar: Ctrl+Alt+D
+- Marcar mensagem com estrela: Alt+8
+- Abrir menu pendente de anexos: Alt+A
+- Iniciar gravação PTT: Ctrl+Alt+Shift+R
+- Colocar gravação PTT em pausa: Alt+P
+- Enviar PTT: Ctrl+Enter
+- Editar última mensagem: Ctrl+Seta para Cima
+- Ativar/Desativar câmara: Ctrl+Alt+V
+- Silenciar/Reativar: Ctrl+Alt+M
+- Reações: Ctrl+Alt+R
+- Levantar a mão: Ctrl+Alt+H
+- Partilha de ecrã: Ctrl+Alt+S
+- Terminar chamada: Ctrl+Alt+W
+- Aumentar o zoom: Ctrl++
+- Diminuir o zoom: Ctrl+-
+- Reposicionar o zoom: Ctrl+0
+- Abrir conversa: Ctrl+1..9
+
 ## Requisitos
 
 - NVDA 2021.1 ou posterior

@@ -18,6 +18,51 @@ Web tabanlı WhatsApp Masaüstü için erişilebilirlik iyileştirmeleri sağlay
 * Mesaj listesinde telefon numarası filtrelemeyi aç/kapat
 * Otomatik Odak Modunu aç/kapat (gerektiğinde Gözden Geçirme Moduna izin verir)
 
+## WhatsApp Masaüstü yerel klavye kısayolları
+
+* Okunmadı olarak işaretle: Ctrl+Shift+U
+* Bildirimleri sessize al: Ctrl+Shift+M
+* Sohbeti arşivle: Ctrl+Shift+A
+* Sohbeti sabitle: Ctrl+Alt+Shift+P
+* Ara: Ctrl+Alt+/
+* Sohbet içinde ara: Ctrl+Shift+F
+* Yeni sohbet: Ctrl+Alt+N
+* Sonraki sohbet: Ctrl+]
+* Önceki sohbet: Ctrl+[
+* Sohbete etiket ekle: Ctrl+Cmd+Shift+L
+* Sohbeti kapat: Escape
+* Yeni grup: Ctrl+Shift+N
+* Profil ve Hakkında: Ctrl+Alt+P
+* Seçili sesli mesaj hızını artır: Shift+.
+* Seçili sesli mesaj hızını azalt: Shift+,
+* Ayarlar: Alt+S
+* Emoji paneli: Ctrl+Alt+E
+* GIF paneli: Ctrl+Alt+G
+* Çıkartma paneli: Ctrl+Alt+S
+* Genişletilmiş arama: Alt+K
+* Uygulamayı kilitle: Alt+L
+* Sohbet ayrıntılarını aç: Alt+I
+* Sohbeti engelle: Ctrl+Shift+B
+* Yanıtla: Alt+R
+* Özelden yanıtla: Ctrl+Alt+R
+* Yönlendir: Ctrl+Alt+D
+* Mesajı yıldızla işaretle: Alt+8
+* Ek dropdown menüsünü aç: Alt+A
+* PTT kaydı başlat: Ctrl+Alt+Shift+R
+* PTT kaydını duraklat: Alt+P
+* PTT gönder: Ctrl+Enter
+* Son mesajı düzenle: Ctrl+Ok Üst
+* Kamerayı Aç/Kapat: Ctrl+Alt+V
+* Sessize Al/Sesi Aç: Ctrl+Alt+M
+* Tepkiler: Ctrl+Alt+R
+* El kaldır: Ctrl+Alt+H
+* Ekran paylaşımı: Ctrl+Alt+S
+* Aramayı sonlandır: Ctrl+Alt+W
+* Yakınlaştır: Ctrl++
+* Uzaklaştır: Ctrl+-
+* Yakınlaştırmayı sıfırla: Ctrl+0
+* Sohbet aç: Ctrl+1..9
+
 ## Gereksinimler
 
 * NVDA 2021.1 veya daha yeni

@@ -18,6 +18,51 @@ NVDA add-on that provides accessibility enhancements for the web-based WhatsApp 
 - Toggle phone number filtering in message list
 - Toggle automatic Focus Mode (allows Browse Mode when needed)
 
+## Native WhatsApp Desktop keyboard shortcuts
+
+- Mark as unread: Ctrl+Shift+U
+- Mute notifications: Ctrl+Shift+M
+- Archive chat: Ctrl+Shift+A
+- Pin chat: Ctrl+Alt+Shift+P
+- Search: Ctrl+Alt+/
+- Search in conversation: Ctrl+Shift+F
+- New chat: Ctrl+Alt+N
+- Next chat: Ctrl+]
+- Previous chat: Ctrl+[
+- Add label to chat: Ctrl+Cmd+Shift+L
+- Close chat: Escape
+- New group: Ctrl+Shift+N
+- Profile and About: Ctrl+Alt+P
+- Increase selected voice message speed: Shift+.
+- Decrease selected voice message speed: Shift+,
+- Settings: Alt+S
+- Emoji panel: Ctrl+Alt+E
+- GIF panel: Ctrl+Alt+G
+- Sticker panel: Ctrl+Alt+S
+- Extended search: Alt+K
+- Lock app: Alt+L
+- Open chat details: Alt+I
+- Block chat: Ctrl+Shift+B
+- Reply: Alt+R
+- Reply privately: Ctrl+Alt+R
+- Forward: Ctrl+Alt+D
+- Star message: Alt+8
+- Open attachment dropdown menu: Alt+A
+- Start PTT recording: Ctrl+Alt+Shift+R
+- Pause PTT recording: Alt+P
+- Send PTT: Ctrl+Enter
+- Edit last message: Ctrl+Arrow Up
+- Toggle camera: Ctrl+Alt+V
+- Mute/Unmute: Ctrl+Alt+M
+- Reactions: Ctrl+Alt+R
+- Raise hand: Ctrl+Alt+H
+- Share screen: Ctrl+Alt+S
+- End call: Ctrl+Alt+W
+- Zoom in: Ctrl++
+- Zoom out: Ctrl+-
+- Reset zoom: Ctrl+0
+- Open chat: Ctrl+1..9
+
 ## Requirements
 
 - NVDA 2021.1 or later

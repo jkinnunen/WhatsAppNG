@@ -18,6 +18,51 @@ NVDA-Add-on, das Barrierefreiheitsverbesserungen für die webbasierte WhatsApp-D
 - Telefonnummernfilter in der Nachrichtenliste umschalten
 - Automatischen Fokusmodus umschalten (ermöglicht den Browse-Modus bei Bedarf)
 
+## Native Tastaturkürzel von WhatsApp Desktop
+
+- Als ungelesen markieren: Strg+Umschalt+U
+- Benachrichtigungen stummschalten: Strg+Umschalt+M
+- Chat archivieren: Strg+Umschalt+A
+- Chat anheften: Strg+Alt+Umschalt+P
+- Suchen: Strg+Alt+/
+- Im Chat suchen: Strg+Umschalt+F
+- Neuer Chat: Strg+Alt+N
+- Nächster Chat: Strg+]
+- Vorheriger Chat: Strg+[
+- Label zum Chat hinzufügen: Strg+Cmd+Umschalt+L
+- Chat schließen: Escape
+- Neue Gruppe: Strg+Umschalt+N
+- Profil und Info: Strg+Alt+P
+- Geschwindigkeit der Sprachnachricht erhöhen: Umschalt+.
+- Geschwindigkeit der Sprachnachricht verringern: Umschalt+,
+- Einstellungen: Alt+S
+- Emoji-Panel: Strg+Alt+E
+- GIF-Panel: Strg+Alt+G
+- Sticker-Panel: Strg+Alt+S
+- Erweiterte Suche: Alt+K
+- App sperren: Alt+L
+- Chatdetails öffnen: Alt+I
+- Chat sperren: Strg+Umschalt+B
+- Antworten: Alt+R
+- Privat antworten: Strg+Alt+R
+- Weiterleiten: Strg+Alt+D
+- Nachricht mit Stern markieren: Alt+8
+- Anhang-Dropdown-Menü öffnen: Alt+A
+- PTT-Aufnahme starten: Strg+Alt+Umschalt+R
+- PTT-Aufnahme pausieren: Alt+P
+- PTT senden: Strg+Enter
+- Letzte Nachricht bearbeiten: Strg+Pfeiltaste nach oben
+- Kamera ein/aus: Strg+Alt+V
+- Stumm schalten/reaktivieren: Strg+Alt+M
+- Reaktionen: Strg+Alt+R
+- Hand heben: Strg+Alt+H
+- Bildschirm freigeben: Strg+Alt+S
+- Anruf beenden: Strg+Alt+W
+- Vergrößern: Strg++
+- Verkleinern: Strg+-
+- Zoom zurücksetzen: Strg+0
+- Chat öffnen: Strg+1..9
+
 ## Anforderungen
 
 - NVDA 2021.1 oder neuer

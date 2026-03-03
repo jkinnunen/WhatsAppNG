@@ -391,11 +391,14 @@ class AppModule(appModuleHandler.AppModule):
 	)
 	def script_copyMessage(self, gesture):
 		"""Copy current message to clipboard."""
-		obj = api.getFocusObject()
-		role_val = _role(obj)
+		# Only works in message list
+		if not self._isMessageListFocus():
+			gesture.send()
+			return
 
-		# Check if focused on a message (LISTITEM or SECTION with name)
-		if (role_val == controlTypes.Role.LISTITEM or role_val == 86) and obj.name:
+		obj = api.getFocusObject()
+
+		if obj.name:
 			# Try to get formatted text first
 			text, error = self._getMessageText(require_expanded=False)
 			if text:
