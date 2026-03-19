@@ -917,12 +917,14 @@ class AppModule(appModuleHandler.AppModule):
 		name = obj.name
 		name_len = len(name)
 
+		# Store original role before any changes (needed for phone filtering)
+		original_role = _role(obj)
+
 		# Filter usage hints (e.g., "Para mais opções, prima...") if enabled
 		# Only in message list (not conversation list)
 		if self._shouldFilterUsageHints():
 			# Check if this is message list (no TABLE ancestor)
-			obj_role = _role(obj)
-			if obj_role == 86 and not self._hasTableInAncestors(obj):
+			if original_role == 86 and not self._hasTableInAncestors(obj):
 				if USAGE_HINT_RE.search(name):
 					# Also check for common hint keywords like "arrow", "menu", "context", "seta"
 					hint_keywords = re.search(r"(arrow|panah|flecha|flèche|freccia|ok|стрелk|menu|konteks|context|contexto|contextuel|seta)", name, re.IGNORECASE)
@@ -934,11 +936,11 @@ class AppModule(appModuleHandler.AppModule):
 						obj.name = name
 						# Update name_len after filtering
 						name_len = len(name)
-						# Also hide the role ("secção") by changing it to STATICTEXT
-						obj.role = controlTypes.Role.STATICTEXT
+						# Also hide the role ("secção") by changing it to UNKNOWN
+						obj.role = controlTypes.Role.UNKNOWN
 
 		# Filter SECTIONs in conversation list to prevent duplicate announces
-		# Like usage hints filter: use UNKNOWN with content to hide the role
+		# Like usage hints filter: use UNKNOWN with space to hide the role
 		obj_role = _role(obj)
 		if obj_role == 86 and self._hasTableInAncestors(obj):
 			# This is a SECTION in the conversation list (has TABLE ancestor)
@@ -966,7 +968,8 @@ class AppModule(appModuleHandler.AppModule):
 			return
 
 		try:
-			obj_role = _role(obj)
+			# Use original role (before we potentially changed it to UNKNOWN)
+			obj_role = original_role
 
 			# Quick exit: only process SECTION and TABLECELL
 			if obj_role != 86 and obj_role != 29:
@@ -1045,8 +1048,9 @@ class AppModule(appModuleHandler.AppModule):
 		except Exception:
 			return False
 
-		# The focus itself must be SECTION (not EDITABLETEXT inside SECTION)
-		if _role(focus) != 86:
+		# The focus itself must be SECTION or UNKNOWN (we change role when filtering)
+		focus_role = _role(focus)
+		if focus_role != 86 and focus_role != controlTypes.Role.UNKNOWN:
 			return False
 
 		# And does NOT have TABLE as ancestor
