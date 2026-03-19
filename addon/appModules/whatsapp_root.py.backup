@@ -10,6 +10,21 @@ import addonHandler
 import wx
 import treeInterceptorHandler
 import speech
+from NVDAObjects.IAccessible import IAccessible
+
+try:
+	from controlTypes import Role
+except Exception:
+	Role = None
+
+
+class SilentSection(IAccessible):
+	"""Custom NVDA Object for SECTIONs in conversation list that should be completely silent."""
+	name = None
+	role = controlTypes.Role.LABEL
+
+	def reportFocus(self):
+		return  # Don't speak anything on focus
 
 try:
 	from controlTypes import Role
@@ -96,6 +111,18 @@ class AppModule(appModuleHandler.AppModule):
 				self._config_cache[key] = bool(val)
 		except Exception:
 			pass
+
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		"""Use SilentSection for SECTIONs in conversation list to prevent duplicate announces."""
+		# Super fast exit: check role directly without function call
+		try:
+			if obj.role != 86:
+				return
+		except Exception:
+			return
+		# Only SECTIONs in conversation list (has TABLE ancestor)
+		if self._hasTableInAncestors(obj):
+			clsList.insert(0, SilentSection)
 
 	def _onBrowseModeStateChange(self, **kwargs):
 		"""
@@ -917,12 +944,14 @@ class AppModule(appModuleHandler.AppModule):
 		name = obj.name
 		name_len = len(name)
 
+		# Store original role before any changes (needed for phone filtering)
+		original_role = _role(obj)
+
 		# Filter usage hints (e.g., "Para mais opções, prima...") if enabled
 		# Only in message list (not conversation list)
 		if self._shouldFilterUsageHints():
 			# Check if this is message list (no TABLE ancestor)
-			obj_role = _role(obj)
-			if obj_role == 86 and not self._hasTableInAncestors(obj):
+			if original_role == 86 and not self._hasTableInAncestors(obj):
 				if USAGE_HINT_RE.search(name):
 					# Also check for common hint keywords like "arrow", "menu", "context", "seta"
 					hint_keywords = re.search(r"(arrow|panah|flecha|flèche|freccia|ok|стрелk|menu|konteks|context|contexto|contextuel|seta)", name, re.IGNORECASE)
@@ -934,17 +963,8 @@ class AppModule(appModuleHandler.AppModule):
 						obj.name = name
 						# Update name_len after filtering
 						name_len = len(name)
-						# Also hide the role ("secção") by changing it to STATICTEXT
-						obj.role = controlTypes.Role.STATICTEXT
-
-		# Filter SECTIONs in conversation list to prevent duplicate announces
-		# Like usage hints filter: use UNKNOWN with content to hide the role
-		obj_role = _role(obj)
-		if obj_role == 86 and self._hasTableInAncestors(obj):
-			# This is a SECTION in the conversation list (has TABLE ancestor)
-			# Use UNKNOWN with space - NVDA won't announce UNKNOWN when there's content
-			obj.name = " "
-			obj.role = controlTypes.Role.UNKNOWN
+						# Also hide the role ("secção") by changing it to UNKNOWN
+						obj.role = controlTypes.Role.UNKNOWN
 
 		# Early exit: name too short to have valid phone number
 		if name_len < 12 and not name.startswith('Talvez '):
@@ -966,7 +986,8 @@ class AppModule(appModuleHandler.AppModule):
 			return
 
 		try:
-			obj_role = _role(obj)
+			# Use original role (before we potentially changed it to UNKNOWN)
+			obj_role = original_role
 
 			# Quick exit: only process SECTION and TABLECELL
 			if obj_role != 86 and obj_role != 29:
@@ -1045,8 +1066,9 @@ class AppModule(appModuleHandler.AppModule):
 		except Exception:
 			return False
 
-		# The focus itself must be SECTION (not EDITABLETEXT inside SECTION)
-		if _role(focus) != 86:
+		# The focus itself must be SECTION or UNKNOWN (we change role when filtering hints)
+		focus_role = _role(focus)
+		if focus_role != 86 and focus_role != controlTypes.Role.UNKNOWN:
 			return False
 
 		# And does NOT have TABLE as ancestor
@@ -1285,6 +1307,7 @@ class AppModule(appModuleHandler.AppModule):
 			new_val = not current
 			config.conf[CONFIG_SECTION]["filterChatList"] = new_val
 			config.conf.save()
+			self._config_cache['filterChatList'] = new_val  # Update cache!
 
 			if new_val:
 				ui.message(_("Conversation list: phone numbers hidden"))
