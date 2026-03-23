@@ -3,11 +3,14 @@
 # This file is distributed under the same license as the whatsAppNG package.
 # Nuno Costa <nrfcosta21@gmail.com>, 2025.
 #
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
 msgid ""
 msgstr ""
 "Project-Id-Version: whatsAppNG 1.1.1\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-02-18 19:21+0000\n"
+"POT-Creation-Date: 2026-03-19 21:54+0000\n"
 "PO-Revision-Date: 2025-01-31 10:00-0300\n"
 "Last-Translator: Nuno Costa <nrfcosta21@gmail.com>\n"
 "Language-Team: \n"
@@ -17,157 +20,156 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: addon\appModules\whatsapp_root.py:46
+#: addon\appModules\whatsapp_root.py:56
 msgid "WhatsApp NG"
 msgstr "WhatsApp NG"
 
-#: addon\appModules\whatsapp_root.py:284
+#: addon\appModules\whatsapp_root.py:407
 msgid "Copy current message to clipboard"
 msgstr "Copiar mensagem atual para a área de transferência"
 
-#: addon\appModules\whatsapp_root.py:332 addon\appModules\whatsapp_root.py:344
+#: addon\appModules\whatsapp_root.py:429 addon\appModules\whatsapp_root.py:444
 msgid "Copied"
 msgstr "Copiado"
 
 #. Not a message or couldn't copy
-#: addon\appModules\whatsapp_root.py:348
+#: addon\appModules\whatsapp_root.py:448
 msgid "Cannot copy"
 msgstr "Não é possível copiar"
 
-#: addon\appModules\whatsapp_root.py:352
+#: addon\appModules\whatsapp_root.py:452
 msgid "Play voice message"
 msgstr "Reproduzir mensagem de voz"
 
 #. No slider or button found
-#: addon\appModules\whatsapp_root.py:366 addon\appModules\whatsapp_root.py:435
-#: addon\appModules\whatsapp_root.py:438
+#: addon\appModules\whatsapp_root.py:466 addon\appModules\whatsapp_root.py:486
+#: addon\appModules\whatsapp_root.py:489
 msgid "No audio message found"
 msgstr "Nenhuma mensagem de voz encontrada"
 
-#. Translators: Read complete message (click "read more" and speak text)
-#: addon\appModules\whatsapp_root.py:442
-msgid "Read complete message (clicks 'read more' button)"
-msgstr "Ler mensagem completa (clica no botão 'ler mais')"
-
-#. Not a text message
-#: addon\appModules\whatsapp_root.py:460
-msgid "Not a text message"
-msgstr "Não é uma mensagem de texto"
-
-#: addon\appModules\whatsapp_root.py:466
-msgid "No message found"
-msgstr "Nenhuma mensagem encontrada"
-
-#: addon\appModules\whatsapp_root.py:620
-msgid "Text not found"
-msgstr "Texto não encontrado"
-
-#: addon\appModules\whatsapp_root.py:629
-msgid "Open context menu"
-msgstr "Abrir menu de contexto"
-
-#. Translators: React to message (opens reaction menu)
-#: addon\appModules\whatsapp_root.py:619
-msgid "React to message"
-msgstr "Reagir à mensagem"
-
-#: addon\appModules\whatsapp_root.py:643 addon\appModules\whatsapp_root.py:673
-#: addon\appModules\whatsapp_root.py:676
-msgid "No menu found"
-msgstr "Menu não encontrado"
-
-#: addon\appModules\whatsapp_root.py:679
-msgid "Focus message composer"
-msgstr "Focar campo de mensagem"
-
-#: addon\appModules\whatsapp_root.py:691 addon\appModules\whatsapp_root.py:752
-#: addon\appModules\whatsapp_root.py:754
-msgid "Message composer not found"
-msgstr "Campo de mensagem não encontrado"
-
-#: addon\appModules\whatsapp_root.py:919
-msgid "Go to WhatsApp conversation list"
-msgstr "Ir para lista de conversas do WhatsApp"
-
-#: addon\appModules\whatsapp_root.py:953 addon\appModules\whatsapp_root.py:1009
-#: addon\appModules\whatsapp_root.py:1012
-msgid "Conversation list not found"
-msgstr "Lista de conversas não encontrada"
-
-#: addon\appModules\whatsapp_root.py:1025
-msgid "Go to WhatsApp message list"
-msgstr "Ir para lista de mensagens do WhatsApp"
-
-#: addon\appModules\whatsapp_root.py:1037
-#: addon\appModules\whatsapp_root.py:1093
-msgid "Message list not found"
-msgstr "Lista de mensagens não encontrada"
-
-#. Not in message list
-#: addon\appModules\whatsapp_root.py:473
+#: addon\appModules\whatsapp_root.py:499
 msgid "Not in message list"
 msgstr "Não está na lista de mensagens"
 
-#. Translators: Alt+Enter: Read complete message in browse mode
-#: addon\appModules\whatsapp_root.py:629
+#: addon\appModules\whatsapp_root.py:505 addon\appModules\whatsapp_root.py:585
+msgid "Not a text message"
+msgstr "Não é uma mensagem de texto"
+
+#: addon\appModules\whatsapp_root.py:509 addon\appModules\whatsapp_root.py:591
+msgid "No message found"
+msgstr "Nenhuma mensagem encontrada"
+
+#: addon\appModules\whatsapp_root.py:565 addon\appModules\whatsapp_root.py:567
+#: addon\appModules\whatsapp_root.py:647 addon\appModules\whatsapp_root.py:652
+msgid "Text not found"
+msgstr "Texto não encontrado"
+
+#. Translators: Read complete message (click "read more" and speak text)
+#: addon\appModules\whatsapp_root.py:571
+msgid "Read complete message (clicks 'read more' button)"
+msgstr "Ler mensagem completa (clica no botão 'ler mais')"
+
+#: addon\appModules\whatsapp_root.py:655
 msgid "Read complete message in browse mode"
 msgstr "Ler mensagem completa no modo de navegação"
 
-#: addon\appModules\whatsapp_root.py:1106
+#: addon\appModules\whatsapp_root.py:707
+msgid "Open context menu"
+msgstr "Abrir menu de contexto"
+
+#: addon\appModules\whatsapp_root.py:721 addon\appModules\whatsapp_root.py:743
+#: addon\appModules\whatsapp_root.py:746
+msgid "No menu found"
+msgstr "Menu não encontrado"
+
+#: addon\appModules\whatsapp_root.py:749
+msgid "React to message"
+msgstr "Reagir à mensagem"
+
+#: addon\appModules\whatsapp_root.py:785
+msgid "Focus message composer"
+msgstr "Focar campo de mensagem"
+
+#: addon\appModules\whatsapp_root.py:797 addon\appModules\whatsapp_root.py:857
+#: addon\appModules\whatsapp_root.py:859
+msgid "Message composer not found"
+msgstr "Campo de mensagem não encontrado"
+
+#: addon\appModules\whatsapp_root.py:1096
+msgid "Go to WhatsApp conversation list"
+msgstr "Ir para lista de conversas do WhatsApp"
+
+#: addon\appModules\whatsapp_root.py:1130
+#: addon\appModules\whatsapp_root.py:1173
+#: addon\appModules\whatsapp_root.py:1176
+msgid "Conversation list not found"
+msgstr "Lista de conversas não encontrada"
+
+#: addon\appModules\whatsapp_root.py:1189
+msgid "Go to WhatsApp message list"
+msgstr "Ir para lista de mensagens do WhatsApp"
+
+#: addon\appModules\whatsapp_root.py:1201
+#: addon\appModules\whatsapp_root.py:1263
+#: addon\appModules\whatsapp_root.py:1266
+msgid "Message list not found"
+msgstr "Lista de mensagens não encontrada"
+
+#: addon\appModules\whatsapp_root.py:1279
 msgid "Toggle phone number filtering in conversation list"
 msgstr "Alternar filtro de números na lista de conversas"
 
-#: addon\appModules\whatsapp_root.py:1112
+#: addon\appModules\whatsapp_root.py:1285
 msgid "Use this command in the conversation list"
 msgstr "Use este comando na lista de conversas"
 
-#: addon\appModules\whatsapp_root.py:1121
+#: addon\appModules\whatsapp_root.py:1294
 msgid "Conversation list: phone numbers hidden"
 msgstr "Lista de conversas: números ocultos"
 
-#: addon\appModules\whatsapp_root.py:1123
+#: addon\appModules\whatsapp_root.py:1296
 msgid "Conversation list: phone numbers visible"
 msgstr "Lista de conversas: números visíveis"
 
-#: addon\appModules\whatsapp_root.py:1128
+#: addon\appModules\whatsapp_root.py:1301
 msgid "Toggle phone number filtering in message list"
 msgstr "Alternar filtro de números na lista de mensagens"
 
-#: addon\appModules\whatsapp_root.py:1134
+#: addon\appModules\whatsapp_root.py:1307
 msgid "Use this command in the message list"
 msgstr "Use este comando na lista de mensagens"
 
-#: addon\appModules\whatsapp_root.py:1143
+#: addon\appModules\whatsapp_root.py:1317
 msgid "Message list: phone numbers hidden"
 msgstr "Lista de mensagens: números ocultos"
 
-#: addon\appModules\whatsapp_root.py:1145
+#: addon\appModules\whatsapp_root.py:1319
 msgid "Message list: phone numbers visible"
 msgstr "Lista de mensagens: números visíveis"
 
-#: addon\appModules\whatsapp_root.py:1157
-msgid "Toggle automatic Focus Mode"
-msgstr "Alternar Modo de Foco automático"
-
-#: addon\appModules\whatsapp_root.py:1167
-msgid "Auto Focus Mode: enabled"
-msgstr "Modo de Foco automático: ativado"
-
-#: addon\appModules\whatsapp_root.py:1169
-msgid "Auto Focus Mode: disabled"
-msgstr "Modo de Foco automático: desativado"
-
-#: addon\appModules\whatsapp_root.py:1295
+#: addon\appModules\whatsapp_root.py:1324
 msgid "Toggle usage hints filtering"
 msgstr "Alternar filtragem de dicas de uso"
 
-#: addon\appModules\whatsapp_root.py:1305
+#: addon\appModules\whatsapp_root.py:1336
 msgid "Usage hints: hidden"
 msgstr "Dicas de uso: ocultas"
 
-#: addon\appModules\whatsapp_root.py:1307
+#: addon\appModules\whatsapp_root.py:1338
 msgid "Usage hints: visible"
 msgstr "Dicas de uso: visíveis"
+
+#: addon\appModules\whatsapp_root.py:1348
+msgid "Toggle automatic Focus Mode"
+msgstr "Alternar Modo de Foco automático"
+
+#: addon\appModules\whatsapp_root.py:1359
+msgid "Auto Focus Mode: enabled"
+msgstr "Modo de Foco automático: ativado"
+
+#: addon\appModules\whatsapp_root.py:1361
+msgid "Auto Focus Mode: disabled"
+msgstr "Modo de Foco automático: desativado"
 
 #. Add-on summary/title, usually the user visible name of the add-on
 #. Translators: Summary/title for this add-on
@@ -188,20 +190,17 @@ msgstr ""
 "incluindo atalhos de navegação, melhorias na interação com mensagens e "
 "melhor suporte para leitor de ecrã."
 
-#. Brief changelog for this version
-#. Translators: what's new content for the add-on version to be shown in the add-on store
-#: buildVars.py:29
-msgid ""
-"- Fixed Control+R to work only on text messages.\n"
-"- Turkish translation support.\n"
-"- Toggle automatic Focus Mode option.\n"
-"- Improved navigation performance.\n"
-"- Video playback with Enter key.\n"
-"- Escape key now passes through correctly."
-msgstr ""
-"- Corrigido Control+R para funcionar apenas em mensagens de texto.\n"
-"- Suporte de tradução turca.\n"
-"- Opção de alternar modo de foco automático.\n"
-"- Melhor desempenho de navegação.\n"
-"- Reprodução de vídeo com a tecla Enter.\n"
-"- A tecla Escape agora passa corretamente."
+#~ msgid ""
+#~ "- Fixed Control+R to work only on text messages.\n"
+#~ "- Turkish translation support.\n"
+#~ "- Toggle automatic Focus Mode option.\n"
+#~ "- Improved navigation performance.\n"
+#~ "- Video playback with Enter key.\n"
+#~ "- Escape key now passes through correctly."
+#~ msgstr ""
+#~ "- Corrigido Control+R para funcionar apenas em mensagens de texto.\n"
+#~ "- Suporte de tradução turca.\n"
+#~ "- Opção de alternar modo de foco automático.\n"
+#~ "- Melhor desempenho de navegação.\n"
+#~ "- Reprodução de vídeo com a tecla Enter.\n"
+#~ "- A tecla Escape agora passa corretamente."
