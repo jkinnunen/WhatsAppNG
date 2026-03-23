@@ -11,7 +11,7 @@ NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp
 * Vaihto+Enter: Avaa viestin pikavalikko
 * Ctrl+C: Kopioi nykyinen viesti leikepöydälle
 * Ctrl+R: Lue koko viesti (napsauttaa tarvittaessa "lue lisää" -painiketta)
-* Ctrl+Vaihto+Enter: Lisää reaktio viestiin
+* Ctrl+Vaihto+Enter: Lisää viestiin reaktio
 
 ### Tilanvaihtoskriptit (ei oletusarvoisia pikakomentoja – määritä Näppäinkomennot-valintaikkunassa)
 
@@ -106,7 +106,7 @@ Korjattu:
 
 Lisätty:
 
-* Ctrl+Vaihto+Enter: reagoi viestiin (avaa reaktiovalikon)
+* Ctrl+Vaihto+Enter: lisää viestiin reaktio (avaa reaktiovalikon)
 * Alt+Enter: lue koko viesti selaustilassa
 * Lisätty ohjeeseen WhatsApp Desktopin alkuperäiset pikanäppäimet
 
