@@ -87,6 +87,18 @@ Configura i tasti rapidi in:
 
 ## Cronologia delle modifiche
 
+### Versione 1.6.0 (2026-03-23)
+
+**Aggiunto:**
+- Filtraggio suggerimenti: nasconde automaticamente suggerimenti come "Per più opzioni..." dagli annunci dei messaggi
+  - Supporta più lingue
+  - Può essere attivato/disattivato con NVDA+Shift+H
+
+**Corretto:**
+- Annuncio duplicato nell'elenco conversazioni: NVDA non annuncia più ogni riga due volte durante la navigazione con frecce (#11)
+- Navigazione Alt+1: maggiore affidabilità nel localizzare l'elenco conversazioni
+- Copia messaggi: maggiore precisione nella copia dei messaggi con Control+C
+
 ### Versione 1.5.0 (2026-03-05)
 
 **Aggiunto:**

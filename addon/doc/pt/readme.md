@@ -87,6 +87,18 @@ Configure os atalhos em:
 
 ## Registro de Alterações
 
+### Versão 1.6.0 (2026-03-23)
+
+**Adicionado:**
+- Filtro de dicas de uso: oculta automaticamente dicas como "Para mais opções..." dos anúncios de mensagens
+  - Suporta vários idiomas
+  - Pode ser alternado com NVDA+Shift+H
+
+**Corrigido:**
+- Anúncio duplicado na lista de conversas: NVDA não anuncia mais cada linha duas vezes ao navegar com setas (#11)
+- Navegação Alt+1: maior confiabilidade ao localizar lista de conversas
+- Copiar mensagens: maior precisão ao copiar mensagens com Control+C
+
 ### Versão 1.5.0 (2026-03-05)
 
 **Adicionado:**

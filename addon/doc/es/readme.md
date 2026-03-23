@@ -87,6 +87,18 @@ Configura los atajos en:
 
 ## Historial de cambios
 
+### Versión 1.6.0 (2026-03-23)
+
+**Añadido:**
+- Filtrado de sugerencias de uso: oculta automáticamente sugerencias como "Para más opciones..." de los anuncios de mensajes
+  - Soporta varios idiomas
+  - Se puede alternar con NVDA+Shift+H
+
+**Corregido:**
+- Anuncio duplicado en la lista de conversaciones: NVDA ya no anuncia cada fila dos veces al navegar con flechas (#11)
+- Navegación Alt+1: mayor confiabilidad al localizar la lista de conversaciones
+- Copiar mensajes: mayor precisión al copiar mensajes con Control+C
+
 ### Versión 1.5.0 (2026-03-05)
 
 **Añadido:**

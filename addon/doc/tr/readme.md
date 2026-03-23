@@ -88,6 +88,18 @@ Kısayolları şuradan yapılandırın:
 
 ## Değişiklik Günlüğü
 
+### Sürüm 1.6.0 (2026-03-23)
+
+**Eklenen:**
+- Kullanım ipuçları filtreleme: Mesaj duyurularından "Daha fazla seçenek için..." gibi ipuçlarını otomatik olarak gizler
+  - Birden çok dili destekler
+  - NVDA+Shift+H ile değiştirilebilir
+
+**Düzeltildi:**
+- Konuşma listesinde yinelen duyuru: NVDA artık ok tuşlarıyla gezinirken her satırı iki kez duyurmuyor (#11)
+- Alt+1 gezinmesi: Konuşma listesini bulmada daha güvenilir
+- Mesaj kopyalama: Control+C ile mesaj kopyalarken daha yüksek doğruluk
+
 ### Sürüm 1.5.0 (2026-03-05)
 
 **Eklenen:**

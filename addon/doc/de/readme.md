@@ -87,6 +87,18 @@ Konfigurieren Sie Tastenkürzel unter:
 
 ## Änderungsprotokoll
 
+### Version 1.6.0 (2026-03-23)
+
+**Hinzugefügt:**
+- Filter für Nutzungshinweise: Blendet automatisch Hinweise wie "Für weitere Optionen..." aus Nachrichtenankündigungen aus
+  - Unterstützt mehrere Sprachen
+  - Kann mit NVDA+Shift+H umgeschaltet werden
+
+**Behoben:**
+- Doppelte Ankündigungen in der Konversationsliste: NVDA kündigt jede Zeile nicht mehr zweimal bei der Navigation mit Pfeiltasten an (#11)
+- Alt+1-Navigation: Höhere Zuverlässigkeit beim Finden der Konversationsliste
+- Nachrichten kopieren: Höhere Genauigkeit beim Kopieren von Nachrichten mit Strg+C
+
 ### Version 1.5.0 (2026-03-05)
 
 **Hinzugefügt:**
