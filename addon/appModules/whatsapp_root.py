@@ -42,7 +42,7 @@ USAGE_HINT_RE = re.compile(
 	r"(For more options|Untuk opsi|Para lebih|Para más|Pour plus|Per lebih|Per lebih banyak|"
 	r"Per lebih lanjut|Per più|Für weitere|Para mais|Daha fazla|Voor meer|Untuk mengakses|"
 	r"Untuk selengkapnya|Untuk bantuan|Untuk mendapatkan|Для получения|Để biết thêm|"
-	r"สำหรับตัวเลือก|その他のオプション|更多选项|अधिक विकल्पों|추가 옵션)",
+	r"สำหรับตัวเลือก|その他のオプション|更多选项|अधिक विकल्पों|추가 옵션|Avaa pikavalikko painamalla)",
 	re.IGNORECASE
 )
 
@@ -933,7 +933,7 @@ class AppModule(appModuleHandler.AppModule):
 			if original_role == 86 and not self._hasTableInAncestors(obj):
 				if USAGE_HINT_RE.search(name):
 					# Also check for common hint keywords like "arrow", "menu", "context", "seta"
-					hint_keywords = re.search(r"(arrow|panah|flecha|flèche|freccia|ok|стрелk|menu|konteks|context|contexto|contextuel|seta)", name, re.IGNORECASE)
+					hint_keywords = re.search(r"(arrow|panah|flecha|flèche|freccia|ok|стрелk|menu|konteks|context|contexto|contextuel|seta|nuolinäppäintä)", name, re.IGNORECASE)
 					if hint_keywords:
 						# Remove from "Para mais" or similar pattern to the end
 						name = USAGE_HINT_RE.split(name)[0].strip()
@@ -942,8 +942,7 @@ class AppModule(appModuleHandler.AppModule):
 						obj.name = name
 						# Update name_len after filtering
 						name_len = len(name)
-						# Also hide the role ("secção") by changing it to UNKNOWN
-						obj.role = controlTypes.Role.UNKNOWN
+						obj.role = controlTypes.Role.LISTITEM
 
 		# Filter SECTIONs in conversation list to prevent duplicate announces
 		# Like usage hints filter: use UNKNOWN with space to hide the role
@@ -952,7 +951,7 @@ class AppModule(appModuleHandler.AppModule):
 			# This is a SECTION in the conversation list (has TABLE ancestor)
 			# Use UNKNOWN with space - NVDA won't announce UNKNOWN when there's content
 			obj.name = " "
-			obj.role = controlTypes.Role.UNKNOWN
+			obj.role = controlTypes.Role.LISTITEM
 
 		# Early exit: name too short to have valid phone number
 		if name_len < 12 and not name.startswith('Talvez '):
