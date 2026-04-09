@@ -945,11 +945,11 @@ class AppModule(appModuleHandler.AppModule):
 						obj.role = controlTypes.Role.LISTITEM
 
 		# Filter SECTIONs in conversation list to prevent duplicate announces
-		# Like usage hints filter: use UNKNOWN with space to hide the role
+		# Like usage hints filter: use LISTITEM with space to hide the role
 		obj_role = _role(obj)
 		if obj_role == 86 and self._hasTableInAncestors(obj):
 			# This is a SECTION in the conversation list (has TABLE ancestor)
-			# Use UNKNOWN with space - NVDA won't announce UNKNOWN when there's content
+			# Use LISTITEM with space - NVDA won't announce LISTITEM when there's content
 			obj.name = " "
 			obj.role = controlTypes.Role.LISTITEM
 
@@ -973,7 +973,7 @@ class AppModule(appModuleHandler.AppModule):
 			return
 
 		try:
-			# Use original role (before we potentially changed it to UNKNOWN)
+			# Use original role (before we potentially changed it to LISTITEM)
 			obj_role = original_role
 
 			# Quick exit: only process SECTION and TABLECELL
@@ -1053,9 +1053,9 @@ class AppModule(appModuleHandler.AppModule):
 		except Exception:
 			return False
 
-		# The focus itself must be SECTION or UNKNOWN (we change role when filtering)
+		# The focus itself must be SECTION or LISTITEM (we change role when filtering)
 		focus_role = _role(focus)
-		if focus_role != 86 and focus_role != controlTypes.Role.UNKNOWN:
+		if focus_role != 86 and focus_role != controlTypes.Role.LISTITEM:
 			return False
 
 		# And does NOT have TABLE as ancestor
