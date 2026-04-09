@@ -455,12 +455,18 @@ class AppModule(appModuleHandler.AppModule):
 	def script_playAudio(self, gesture):
 		"""Enter: Clicks play button (button before slider) without moving focus."""
 		try:
+			focus = api.getFocusObject()
+
+			# If focus is already on a button, let it pass through
+			if _role(focus) == controlTypes.Role.BUTTON:
+				gesture.send()
+				return
+
 			# Only works in message list
 			if not self._isMessageListFocus():
 				gesture.send()
 				return
 
-			focus = api.getFocusObject()
 			parent = getattr(focus, "parent", None)
 			if not parent:
 				ui.message(_("No audio message found"))
