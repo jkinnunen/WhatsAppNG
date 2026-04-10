@@ -87,6 +87,16 @@ Konfigurieren Sie Tastenkürzel unter:
 
 ## Änderungsprotokoll
 
+### Version 1.7.0 (2026-04-10)
+
+**Hinzugefügt:**
+- Finnische Übersetzung: Vollständige Unterstützung der finnischen Sprache
+
+**Behoben:**
+- Enter-Taste auf Schaltflächen: Enter wird jetzt korrekt weitergeleitet, wenn der Fokus auf einer Schaltfläche liegt
+  - Früher drückte die Eingabetaste auf beliebigen Schaltflächen in WhatsApp die Audiowiedergabe
+  - Jetzt funktionieren Schaltflächen korrekt (z. B. funktioniert die Schaltfläche "Datei speichern" wie erwartet)
+
 ### Version 1.6.0 (2026-03-23)
 
 **Hinzugefügt:**

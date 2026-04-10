@@ -87,6 +87,16 @@ Configure os atalhos em:
 
 ## Registro de Alterações
 
+### Versão 1.7.0 (2026-04-10)
+
+**Adicionado:**
+- Tradução finlandesa: Suporte completo ao idioma finlandês
+
+**Corrigido:**
+- Tecla Enter em botões: Enter agora passa corretamente quando o foco está em um botão
+  - Anteriormente, pressionar Enter em qualquer botão no WhatsApp acionava a reprodução de áudio
+  - Agora os botões se comportam corretamente (por exemplo, o botão salvar arquivo funciona como esperado)
+
 ### Versão 1.6.0 (2026-03-23)
 
 **Adicionado:**

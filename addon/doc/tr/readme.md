@@ -88,6 +88,16 @@ Kısayolları şuradan yapılandırın:
 
 ## Değişiklik Günlüğü
 
+### Sürüm 1.7.0 (2026-04-10)
+
+**Eklenen:**
+- Fince çeviri: Tam Fince dil desteği
+
+**Düzeltildi:**
+- Buttonlardaki Enter tuşu: Odak bir button üzerindeyken Enter artık doğru şekilde iletiliyor
+  - Önceden WhatsApp'ta herhangi bir buttona Enter basınca ses oynatılıyordu
+  - Artık buttonlar doğru şekilde çalışıyor (örneğin, dosyayı kaydet buttonu beklendiği gibi çalışıyor)
+
 ### Sürüm 1.6.0 (2026-03-23)
 
 **Eklenen:**

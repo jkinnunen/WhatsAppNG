@@ -87,6 +87,16 @@ Configura i tasti rapidi in:
 
 ## Cronologia delle modifiche
 
+### Versione 1.7.0 (2026-04-10)
+
+**Aggiunto:**
+- Traduzione finlandese: Supporto completo alla lingua finlandese
+
+**Corretto:**
+- Tasto Invio sui pulsanti: Invio ora passa correttamente quando il focus è su un pulsante
+  - In precedenza, premere Invio su qualsiasi pulsante in WhatsApp attivava la riproduzione audio
+  - Ora i pulsanti si comportano correttamente (ad esempio, il pulsante salva file funziona come previsto)
+
 ### Versione 1.6.0 (2026-03-23)
 
 **Aggiunto:**

@@ -87,6 +87,16 @@ Configura los atajos en:
 
 ## Historial de cambios
 
+### Versión 1.7.0 (2026-04-10)
+
+**Añadido:**
+- Traducción finlandesa: Soporte completo al idioma finlandés
+
+**Corregido:**
+- Tecla Enter en botones: Enter ahora pasa correctamente cuando el foco está en un botón
+  - Anteriormente, presionar Enter en cualquier botón en WhatsApp activaba la reproducción de audio
+  - Ahora los botones se comportan correctamente (por ejemplo, el botón guardar archivo funciona como esperado)
+
 ### Versión 1.6.0 (2026-03-23)
 
 **Añadido:**

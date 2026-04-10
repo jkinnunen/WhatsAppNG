@@ -87,6 +87,16 @@ Configure shortcuts in:
 
 ## Changelog
 
+### Version 1.7.0 (2026-04-10)
+
+**Added:**
+- Finnish translation: Full Finnish language support
+
+**Fixed:**
+- Enter key on buttons: Enter now correctly passes through when focus is on a button
+  - Previously, pressing Enter on any button in WhatsApp would trigger audio playback
+  - Now buttons behave correctly (e.g., save file button works as expected)
+
 ### Version 1.6.0 (2026-03-23)
 
 **Added:**

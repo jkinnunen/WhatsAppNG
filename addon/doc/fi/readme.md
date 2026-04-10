@@ -87,6 +87,18 @@ Määritä pikanäppäimet kohdassa NVDA-valikko → Mukautukset → Näppäinko
 
 ## Muutosloki
 
+### Versio 1.7.0 (10.4.2026)
+
+Lisätty:
+
+* Suomenkielinen käännös: Täysi suomenkielen tuki
+
+Korjattu:
+
+* Enter-näppäin painikkeilla: Enter välittää nyt oikein, kun kohdistus on painikkeella
+  * Aiemmin Enterin painaminen millä tahansa WhatsAppin painikkeella käynnisti äänen toiston
+  * Nyt painikkeet toimivat oikein (esim. tallenna tiedosto -painike toimii odotetulla tavalla)
+
 ### Versio 1.6.0 (23.3.2026)
 
 Lisätty:
