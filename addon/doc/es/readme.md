@@ -89,6 +89,13 @@ Configura los atajos en:
 
 ### Versión 1.7.0 (2026-04-10)
 
+**Corregido:**
+- Orden de reproducción de tecla Enter: Corregido problema donde los mensajes de audio ya no se reproducían con la tecla Enter
+  - La verificación de botón ahora solo ocurre fuera de la lista de mensajes
+  - Los mensajes de audio se reproducen correctamente al navegar la lista de mensajes
+
+### Versión 1.7.0 (2026-04-10)
+
 **Añadido:**
 - Traducción finlandesa: Soporte completo al idioma finlandés
 

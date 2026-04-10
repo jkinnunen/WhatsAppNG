@@ -87,6 +87,13 @@ Configura i tasti rapidi in:
 
 ## Cronologia delle modifiche
 
+### Versione 1.7.1 (2026-04-10)
+
+**Corretto:**
+- Ordine di riproduzione tasto Invio: Risolto problema in cui i messaggi audio non venivano più riprodotti con il tasto Invio
+  - La verifica del pulsante ora avviene solo fuori dalla lista dei messaggi
+  - I messaggi audio vengono riprodotti correttamente durante la navigazione della lista dei messaggi
+
 ### Versione 1.7.0 (2026-04-10)
 
 **Aggiunto:**

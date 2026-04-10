@@ -457,13 +457,12 @@ class AppModule(appModuleHandler.AppModule):
 		try:
 			focus = api.getFocusObject()
 
-			# If focus is already on a button, let it pass through
-			if _role(focus) == controlTypes.Role.BUTTON:
-				gesture.send()
-				return
-
 			# Only works in message list
 			if not self._isMessageListFocus():
+				# If focus is on a button outside message list, let it pass through
+				if _role(focus) == controlTypes.Role.BUTTON:
+					gesture.send()
+					return
 				gesture.send()
 				return
 

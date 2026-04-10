@@ -88,6 +88,13 @@ Kısayolları şuradan yapılandırın:
 
 ## Değişiklik Günlüğü
 
+### Sürüm 1.7.1 (2026-04-10)
+
+**Düzeltildi:**
+- Enter tuşu oynatma sırası: Sesli mesajların artık Enter tuşuyla çalmadığı sorun düzeltildi
+  - Button kontrolü artık sadece mesaj listesinin dışında gerçekleşiyor
+  - Sesli mesajlar mesaj listesinde gezinirken doğru şekilde çalıyor
+
 ### Sürüm 1.7.0 (2026-04-10)
 
 **Eklenen:**

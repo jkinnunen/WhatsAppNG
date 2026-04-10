@@ -87,6 +87,13 @@ Configure shortcuts in:
 
 ## Changelog
 
+### Version 1.7.1 (2026-04-10)
+
+**Fixed:**
+- Enter key playback order: Fixed issue where audio messages no longer played with Enter key
+  - Button check now only happens outside message list
+  - Audio messages play correctly when navigating message list
+
 ### Version 1.7.0 (2026-04-10)
 
 **Added:**

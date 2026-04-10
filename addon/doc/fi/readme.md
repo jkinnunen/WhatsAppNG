@@ -87,6 +87,14 @@ Määritä pikanäppäimet kohdassa NVDA-valikko → Mukautukset → Näppäinko
 
 ## Muutosloki
 
+### Versio 1.7.1 (10.4.2026)
+
+Korjattu:
+
+* Enter-näppäimen toistojärjestys: Korjattu ongelma, jossa ääniviestit eivät enää toistuneet Enter-näppäimellä
+  * Button-tarkistus tapahtuu nyt vain viestilistan ulkopuolella
+  * Ääniviestit toistuvat oikein viestilistassa navigoitaessa
+
 ### Versio 1.7.0 (10.4.2026)
 
 Lisätty:

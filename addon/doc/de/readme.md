@@ -87,6 +87,13 @@ Konfigurieren Sie Tastenkürzel unter:
 
 ## Änderungsprotokoll
 
+### Version 1.7.1 (2026-04-10)
+
+**Behoben:**
+- Enter-Tasten-Wiedergabereihenfolge: Problem behoben, bei dem Audionachrichten nicht mehr mit der Enter-Taste abgespielt wurden
+  - Die Überprüfung der Schaltfläche erfolgt nun nur außerhalb der Nachrichtenliste
+  - Audionachrichten werden korrekt abgespielt, wenn in der Nachrichtenliste navigiert wird
+
 ### Version 1.7.0 (2026-04-10)
 
 **Hinzugefügt:**

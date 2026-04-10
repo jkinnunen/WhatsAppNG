@@ -87,6 +87,13 @@ Configure os atalhos em:
 
 ## Registro de Alterações
 
+### Versão 1.7.1 (2026-04-10)
+
+**Corrigido:**
+- Ordem de reprodução do Enter: Corrigido problema onde mensagens de áudio não mais tocavam com a tecla Enter
+  - Verificação de botão agora só acontece fora da lista de mensagens
+  - Mensagens de áudio tocam corretamente ao navegar na lista de mensagens
+
 ### Versão 1.7.0 (2026-04-10)
 
 **Adicionado:**
