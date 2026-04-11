@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: whatsAppNG 1.5.0\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2026-03-23 11:11+0000\n"
-"PO-Revision-Date: 2026-04-10 23:51+0300\n"
+"PO-Revision-Date: 2026-04-12 00:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -63,7 +63,7 @@ msgstr "Ei viestiä"
 #: addon/appModules/whatsapp_root.py:565 addon/appModules/whatsapp_root.py:567
 #: addon/appModules/whatsapp_root.py:647 addon/appModules/whatsapp_root.py:652
 msgid "Text not found"
-msgstr "Tekstiä ei löydetty"
+msgstr "Tekstiä ei löydy"
 
 #. Translators: Read complete message (click "read more" and speak text)
 #: addon/appModules/whatsapp_root.py:571
@@ -114,7 +114,7 @@ msgstr "Siirry viestiluetteloon"
 #: addon/appModules/whatsapp_root.py:1263
 #: addon/appModules/whatsapp_root.py:1266
 msgid "Message list not found"
-msgstr "Viestiluetteloa ei löydetty"
+msgstr "Viestiluetteloa ei löydy"
 
 #: addon/appModules/whatsapp_root.py:1279
 msgid "Toggle phone number filtering in conversation list"
@@ -162,15 +162,15 @@ msgstr "Käyttövihjeet näkyvissä"
 
 #: addon/appModules/whatsapp_root.py:1348
 msgid "Toggle automatic Focus Mode"
-msgstr "Automaattisen tarkastelutilan vaihto"
+msgstr "Automaattisen lomaketilan vaihto"
 
 #: addon/appModules/whatsapp_root.py:1359
 msgid "Auto Focus Mode: enabled"
-msgstr "Automaattinen tarkastelutila käytössä"
+msgstr "Automaattinen lomaketila käytössä"
 
 #: addon/appModules/whatsapp_root.py:1361
 msgid "Auto Focus Mode: disabled"
-msgstr "Automaattinen tarkastelutila pois"
+msgstr "Automaattinen lomaketila pois"
 
 #. Add-on summary/title, usually the user visible name of the add-on
 #. Translators: Summary/title for this add-on
@@ -187,5 +187,5 @@ msgid ""
 "including navigation shortcuts, message interaction enhancements, and better "
 "screen reader support."
 msgstr ""
-"Lisää WhatsAppin web-versioon pohjautuvaan sovellukseen navigointityökaluja, "
-"kuten näppäinkomentoja ja parempaa ruudunlukua."
+"Lisää WhatsAppin verkkoversioon pohjautuvaan sovellukseen "
+"navigointityökaluja, kuten näppäinkomentoja ja paremman ruudunlukijatuen."
