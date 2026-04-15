@@ -1052,9 +1052,16 @@ class AppModule(appModuleHandler.AppModule):
 		except Exception:
 			return False
 
-		# The focus itself must be SECTION or LISTITEM (we change role when filtering)
+		# Check if window title contains "WhatsApp" (case insensitive)
+		# This detects when we're in dialogs or other windows
+		foreground = api.getForegroundObject()
+		window_title = getattr(foreground, "name", "") or ""
+		if "whatsapp" not in window_title.lower():
+			return False
+
+		# The focus itself must be LISTITEM (no longer checking for SECTION/role 86)
 		focus_role = _role(focus)
-		if focus_role != 86 and focus_role != controlTypes.Role.LISTITEM:
+		if focus_role != controlTypes.Role.LISTITEM:
 			return False
 
 		# And does NOT have TABLE as ancestor
