@@ -1300,6 +1300,7 @@ class AppModule(appModuleHandler.AppModule):
 			new_val = not current
 			config.conf[CONFIG_SECTION]["filterChatList"] = new_val
 			config.conf.save()
+			self._config_cache['filterChatList'] = new_val  # Update cache
 
 			if new_val:
 				ui.message(_("Conversation list: phone numbers hidden"))
