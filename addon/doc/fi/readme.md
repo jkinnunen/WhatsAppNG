@@ -1,25 +1,25 @@
 # WhatsApp NG
 
-NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp Desktopille.
+NVDA-lisäosa, joka lisää saavutettavuusparannuksia WhatsAppin verkkopohjaiselle työpöytäversiolle.
 
 ## Ominaisuudet
 
-- **Alt+1**: Siirry WhatsAppin keskustelulistaan
-- **Alt+2**: Siirry WhatsAppin viestilistaan
-- **Alt+D**: Siirrä kohdistus viestin syöttökenttään
+- **Alt+1**: Siirry WhatsAppin keskusteluluetteloon
+- **Alt+2**: Siirry WhatsAppin viestiluetteloon
+- **Alt+D**: Siirry viestin kirjoituskenttään
 - **Enter**: Toista ääniviesti (toimii yksityiskeskusteluissa ja ryhmissä)
 - **Vaihto+Enter**: Avaa viestin pikavalikko
 - **Ctrl+C**: Kopioi nykyinen viesti leikepöydälle
-- **Ctrl+R**: Lue koko viesti (napsauttaa tarvittaessa "lue lisää" -painiketta)
-- **Ctrl+Vaihto+Enter**: Lisää viestiin reaktio
+- **Ctrl+R**: Lue koko viesti (painaa tarvittaessa "Lue lisää" -painiketta)
+- **Ctrl+Vaihto+Enter**: Reagoi viestiin
 
-### Tilanvaihtoskriptit (ei oletusarvoisia pikakomentoja – määritä Näppäinkomennot-valintaikkunassa)
+### Tilanvaihtoskriptit (ei oletusarvoisia pikanäppäimiä – määritä ne Näppäinkomennot-valintaikkunassa)
 
-- Puhelinnumerosuodatuksen käyttöönotto tai käytöstä poisto keskustelulistassa
-- Puhelinnumerosuodatuksen käyttöönotto tai käytöstä poisto viestilistassa
+- Puhelinnumerosuodatuksen käyttöönotto tai käytöstä poisto keskusteluluettelossa
+- Puhelinnumerosuodatuksen käyttöönotto tai käytöstä poisto viestiluettelossa
 - Automaattisen lomaketilan käyttöönotto tai käytöstä poisto (sallii tarvittaessa selaustilan)
 
-## WhatsApp Desktopin alkuperäiset pikanäppäimet
+## WhatsAppin työpöytäversion alkuperäiset pikanäppäimet
 
 - Merkitse lukemattomaksi: Ctrl+Vaihto+U
 - Mykistä ilmoitukset: Ctrl+Vaihto+M
@@ -33,7 +33,7 @@ NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp
 - Lisää tunniste keskusteluun: Ctrl+Vaihto+L
 - Sulje keskustelu: Esc
 - Uusi ryhmä: Ctrl+Vaihto+N
-- Profiili ja Tietoja: Ctrl+Alt+P
+- Profiili ja tiedot: Ctrl+Alt+P
 - Lisää valitun ääniviestin toistonopeutta: Vaihto+.
 - Vähennä valitun ääniviestin toistonopeutta: Vaihto+,
 - Asetukset: Alt+S
@@ -49,9 +49,9 @@ NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp
 - Välitä edelleen: Ctrl+Alt+D
 - Merkitse viesti tähdellä: Alt+8
 - Avaa liitevalikko: Alt+A
-- Aloita PTT-tallennus: Ctrl+Alt+Vaihto+R
-- Keskeytä PTT-tallennus: Alt+P
-- Lähetä PTT: Ctrl+Enter
+- Aloita ääniviestin tallennus: Ctrl+Alt+Vaihto+R
+- Tauota ääniviestin tallennus: Alt+P
+- Lähetä ääniviesti: Ctrl+Enter
 - Muokkaa viimeisintä viestiä: Ctrl+Nuoli ylös
 - Kamera päälle/pois: Ctrl+Alt+V
 - Mykistä/poista mykistys: Ctrl+Alt+M
@@ -67,7 +67,7 @@ NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp
 ## Vaatimukset
 
 - NVDA 2021.1 tai uudempi
-- WhatsApp Desktop (verkkopohjainen versio)
+- WhatsAppin verkkopohjainen työpöytäversio
 
 ## Asennus
 
@@ -80,8 +80,8 @@ NVDA-lisäosa, joka tarjoaa saavutettavuusparannuksia verkkopohjaiselle WhatsApp
 
 Puhelinnumerosuodattimet voidaan ottaa käyttöön tai poistaa käytöstä:
 
-- Keskustelulistassa: määritä pikanäppäin Näppäinkomennot-valintaikkunassa
-- Viestilistassa: määritä pikanäppäin Näppäinkomennot-valintaikkunassa
+- Keskusteluluettelossa: määritä pikanäppäin Näppäinkomennot-valintaikkunassa
+- Viestiluettelossa: määritä pikanäppäin Näppäinkomennot-valintaikkunassa
 
 Määritä pikanäppäimet kohdassa **NVDA-valikko → Mukautukset → Näppäinkomennot → WhatsApp NG**.
 
@@ -91,8 +91,8 @@ Määritä pikanäppäimet kohdassa **NVDA-valikko → Mukautukset → Näppäin
 
 **Korjattu:**
 - Enter-näppäimen toistojärjestys: Korjattu ongelma, jossa ääniviestit eivät enää toistuneet Enter-näppäimellä
-  - Painikkeiden tarkistus tapahtuu nyt vain viestilistan ulkopuolella
-  - Ääniviestit toistuvat oikein viestilistassa navigoitaessa
+  - Painikkeiden tarkistus tapahtuu nyt vain viestiluettelon ulkopuolella
+  - Ääniviestit toistuvat oikein viestiluettelossa navigoitaessa
 
 ### Versio 1.7.0 (10.4.2026)
 
@@ -113,8 +113,8 @@ Määritä pikanäppäimet kohdassa **NVDA-valikko → Mukautukset → Näppäin
   - Voidaan ottaa käyttöön tai poistaa käytöstä painamalla NVDA+Vaihto+H
 
 **Korjattu:**
-- Kaksoisilmoitus keskustelulistassa: NVDA ei enää lue jokaista keskusteluriviä kahdesti nuolinäppäimillä liikuttaessa (#11)
-- Siirtyminen Alt+1:llä: keskustelulistan paikantaminen on aiempaa luotettavampaa
+- Kaksoisilmoitus keskusteluluettelossa: NVDA ei enää lue jokaista keskusteluriviä kahdesti nuolinäppäimillä liikuttaessa (#11)
+- Siirtyminen Alt+1:llä: keskusteluluettelon paikantaminen on aiempaa luotettavampaa
 - Viestien kopiointi: Ctrl+C:n tarkkuutta on parannettu
 
 ### Versio 1.5.0 (5.3.2026)
@@ -127,7 +127,7 @@ Määritä pikanäppäimet kohdassa **NVDA-valikko → Mukautukset → Näppäin
 **Muutettu:**
 - Suorituskykyä on optimoitu merkittävästi: navigointi on nyt sujuvampaa ja reagoivampaa
 - Alt+2-pikanäppäin toimii aiempaa luotettavammin ja täsmällisemmin
-- Ctrl+C toimii nyt vain viestilistassa
+- Ctrl+C toimii nyt vain viestiluettelossa
 
 **Korjattu:**
 - Kun pitkät viestit laajennetaan, Ctrl+R lukee nyt niiden koko tekstin oikein
@@ -190,7 +190,7 @@ Määritä pikanäppäimet kohdassa **NVDA-valikko → Mukautukset → Näppäin
 ### Versio 1.0.0 (29.1.2025)
 
 **Ensimmäinen julkaisu:**
-- Navigointipikanäppäimet keskustelulistaan, viestilistaan ja viestin kirjoituskenttään siirtymistä varten
+- Navigointipikanäppäimet keskustelu- ja viestiluetteloon sekä viestin kirjoituskenttään siirtymistä varten
 - Ääniviestien toisto, tuki yksityiskeskusteluille ja ryhmille
 - Viestitoimintojen pikavalikon avaaminen
 - Puhelinnumerosuodatuksen käyttöönotto ja käytöstä poisto keskusteluissa ja viesteissä
