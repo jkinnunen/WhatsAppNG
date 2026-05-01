@@ -207,3 +207,29 @@ msgstr ""
 #~ "- Verbesserte Navigationsleistung.\n"
 #~ "- Videowiedergabe mit der Eingabetaste.\n"
 #~ "- Die Escape-Taste wird jetzt korrekt durchgereicht."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Per PayPal spenden"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Nicht jetzt"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Aufruf zu Beiträgen für %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Die Entwicklung von Add-ons erfordert viel Zeit und Mühe.
+"
+"Ihr Beitrag hilft, dieses und andere kostenlose Projekte zu erhalten.
+"
+"Möchten Sie einen Beitrag leisten? Wählen Sie unten eine Zahlungsmethode.
+"
+"Vielen Dank für Ihre Unterstützung!"

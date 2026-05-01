@@ -199,3 +199,29 @@ msgstr ""
 #~ "- Покращено продуктивність навігації.\n"
 #~ "- Відтворення відео клавішею Enter.\n"
 #~ "- Клавіша Escape тепер проходить коректно."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Пожертвувати через PayPal"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Зараз ні"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Запит внесків для %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Розробка додатків потребує багато часу та зусиль.
+"
+"Ваш внесок допомагає підтримувати цей та інші безкоштовні проєкти.
+"
+"Бажаєте зробити внесок? Виберіть спосіб оплати нижче.
+"
+"Дякуємо за вашу підтримку!"

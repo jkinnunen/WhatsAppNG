@@ -206,3 +206,23 @@ msgstr ""
 #~ "- Dolaşım performansı iyileştirildi.\n"
 #~ "- Enter tuşuyla video oynatma.\n"
 #~ "- Escape tuşu artık doğru şekilde iletiliyor."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "PayPal ile bağış yap"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Şimdi değil"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "%s için katkı talebi"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Eklenti geliştirmek çok zaman ve emek gerektirir.\nKatkınız bu ve diğer ücretsiz projelerin sürdürülmesine yardımcı olur.\nKatkıda bulunmak ister misiniz? Aşağıdan bir ödeme yöntemi seçin.\nDesteğiniz için teşekkürler!"

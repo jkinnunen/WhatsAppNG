@@ -207,3 +207,29 @@ msgstr ""
 #~ "- Prestazioni di navigazione migliorate.\n"
 #~ "- Riproduzione video con tasto Invio.\n"
 #~ "- Il tasto Esc ora passa correttamente."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Dona via PayPal"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Non ora"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Richiesta di contributi per %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Lo sviluppo di componenti aggiuntivi richiede molto tempo e impegno.
+"
+"Il tuo contributo aiuta a mantenere questo e altri progetti gratuiti.
+"
+"Vuoi contribuire? Seleziona un metodo di pagamento qui sotto.
+"
+"Grazie per il tuo supporto!"

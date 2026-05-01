@@ -189,3 +189,29 @@ msgid ""
 msgstr ""
 "Lisää WhatsAppin verkkoversioon pohjautuvaan sovellukseen "
 "navigointityökaluja, kuten näppäinkomentoja ja paremman ruudunlukijatuen."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Lahjoita PayPalilla"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Ei nyt"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Pyyntö lisäosan %s tukemiseksi"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Lisäosien kehittäminen vaatii paljon aikaa ja vaivaa.
+"
+"Lahjoituksesi auttaa ylläpitämään tätä ja muita ilmaisia projekteja.
+"
+"Haluaisitko osallistua? Valitse maksutapa alapuolelta.
+"
+"Kiitos tuestasi!"

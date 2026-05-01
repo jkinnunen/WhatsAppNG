@@ -233,3 +233,29 @@ msgstr ""
 #~ "- Переключатель фильтрации озвучивания номеров телефонов для чатов и "
 #~ "списка сообщений.\n"
 #~ "- Автоматическое включение режима редактирования в WhatsApp Desktop."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Пожертвовать через PayPal"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Не сейчас"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Запрос вкладов для %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Разработка дополнений требует много времени и усилий.
+"
+"Ваш вклад помогает поддерживать этот и другие бесплатные проекты.
+"
+"Хотите внести вклад? Выберите способ оплаты ниже.
+"
+"Спасибо за вашу поддержку!"

@@ -204,3 +204,23 @@ msgstr ""
 #~ "- Improved navigation performance.\n"
 #~ "- Video playback with Enter key.\n"
 #~ "- Escape key now passes through correctly."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "Donate via PayPal"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&Not now"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "Request for contributions to %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "Developing add-ons requires a lot of time and effort.\nYour contribution helps maintain this and other free projects.\nWould you like to contribute? Select a payment method below.\nThank you for your support!"

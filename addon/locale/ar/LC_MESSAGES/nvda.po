@@ -206,3 +206,29 @@ msgstr ""
 #~ "- تحسين أداء التنقل.\n"
 #~ "- تشغيل الفيديو بمفتاح Enter.\n"
 #~ "- مفتاح Escape يمر الآن بشكل صحيح."
+
+#: addon\installTasks.py
+msgid "Donate via PayPal"
+msgstr "تبرع عبر PayPal"
+
+#: addon\installTasks.py
+msgid "&Not now"
+msgstr "&ليس الآن"
+
+#: addon\installTasks.py
+msgid "Request for contributions to %s"
+msgstr "طلب مساهمات لـ %s"
+
+#: addon\installTasks.py
+msgid ""
+"Developing add-ons requires a lot of time and effort.\n"
+"Your contribution helps maintain this and other free projects.\n"
+"Would you like to contribute? Select a payment method below.\n"
+"Thank you for your support!"
+msgstr "تطوير الإضافات يتطلب الكثير من الوقت والجهد.
+"
+"مساهمتك تساعد في الحفاظ على هذا المشروع ومشاريع مجانية أخرى.
+"
+"هل ترغب في المساهمة؟ اختر طريقة الدفع أدناه.
+"
+"شكراً لدعمك!"
