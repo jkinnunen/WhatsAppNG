@@ -208,10 +208,8 @@ msgid ""
 "Your contribution helps maintain this and other free projects.\n"
 "Would you like to contribute? Select a payment method below.\n"
 "Thank you for your support!"
-msgstr "Lisäosien kehittäminen vaatii paljon aikaa ja vaivaa.
-"
-"Lahjoituksesi auttaa ylläpitämään tätä ja muita ilmaisia projekteja.
-"
-"Haluaisitko osallistua? Valitse maksutapa alapuolelta.
-"
+msgstr ""
+"Lisäosien kehittäminen vaatii paljon aikaa ja vaivaa.\n"
+"Lahjoituksesi auttaa ylläpitämään tätä ja muita ilmaisia projekteja.\n"
+"Haluaisitko osallistua? Valitse maksutapa alapuolelta.\n"
 "Kiitos tuestasi!"

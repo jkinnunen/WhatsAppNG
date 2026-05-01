@@ -87,37 +87,6 @@ Configure shortcuts in:
 
 ## Changelog
 
-### Version 1.8.0 (2026-05-01)
-
-**Added:**
-- Donation dialog during add-on installation
-
-**Changed:**
-- Navigation (Alt+1, Alt+2, Alt+D) more resilient to WhatsApp UI changes
-
-**Fixed:**
-- Enter and Shift+Enter not working when usage hints filter is disabled
-- Enter key not working in file dialogs and conversation list
-- Toggle phone filtering in conversation list not updating correctly
-- Improved Finnish translation and documentation
-
-### Version 1.7.1 (2026-04-10)
-
-**Fixed:**
-- Enter key playback order: Fixed issue where audio messages no longer played with Enter key
-  - Button check now only happens outside message list
-  - Audio messages play correctly when navigating message list
-
-### Version 1.7.0 (2026-04-10)
-
-**Added:**
-- Finnish translation: Full Finnish language support
-
-**Fixed:**
-- Enter key on buttons: Enter now correctly passes through when focus is on a button
-  - Previously, pressing Enter on any button in WhatsApp would trigger audio playback
-  - Now buttons behave correctly (e.g., save file button works as expected)
-
 ### Version 1.6.0 (2026-03-23)
 
 **Added:**

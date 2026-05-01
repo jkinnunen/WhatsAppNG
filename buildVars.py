@@ -23,7 +23,7 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description=_("Provides accessibility improvements for the web-based WhatsApp Desktop, including navigation shortcuts, message interaction enhancements, and better screen reader support."),
 	# version
-	addon_version="1.5.0",
+	addon_version="1.8.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_(""""""),

@@ -225,10 +225,8 @@ msgid ""
 "Your contribution helps maintain this and other free projects.\n"
 "Would you like to contribute? Select a payment method below.\n"
 "Thank you for your support!"
-msgstr "تطوير الإضافات يتطلب الكثير من الوقت والجهد.
-"
-"مساهمتك تساعد في الحفاظ على هذا المشروع ومشاريع مجانية أخرى.
-"
-"هل ترغب في المساهمة؟ اختر طريقة الدفع أدناه.
-"
+msgstr ""
+"تطوير الإضافات يتطلب الكثير من الوقت والجهد.\n"
+"مساهمتك تساعد في الحفاظ على هذا المشروع ومشاريع مجانية أخرى.\n"
+"هل ترغب في المساهمة؟ اختر طريقة الدفع أدناه.\n"
 "شكراً لدعمك!"

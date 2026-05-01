@@ -226,10 +226,8 @@ msgid ""
 "Your contribution helps maintain this and other free projects.\n"
 "Would you like to contribute? Select a payment method below.\n"
 "Thank you for your support!"
-msgstr "Lo sviluppo di componenti aggiuntivi richiede molto tempo e impegno.
-"
-"Il tuo contributo aiuta a mantenere questo e altri progetti gratuiti.
-"
-"Vuoi contribuire? Seleziona un metodo di pagamento qui sotto.
-"
+msgstr ""
+"Lo sviluppo di componenti aggiuntivi richiede molto tempo e impegno.\n"
+"Il tuo contributo aiuta a mantenere questo e altri progetti gratuiti.\n"
+"Vuoi contribuire? Seleziona un metodo di pagamento qui sotto.\n"
 "Grazie per il tuo supporto!"
