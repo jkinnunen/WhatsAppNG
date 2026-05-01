@@ -73,12 +73,9 @@ class AppModule(appModuleHandler.AppModule):
 		self._loadConfigCache()
 
 		self._toggling = False  # Flag to skip filter during focus changes
-		self._electron_container = None  # Cache for Electron container element
-		self._conv_list_prefix = None  # Cache for conversation list prefix (container[4][1])
+		self._whatsapp_window = None  # Cache for WhatsApp WINDOW (R:52)
 		self._conv_list_container = None  # Cache for conversation list container (role 28)
 		self._conv_list_cell = None  # Cache for conversation list first cell (role 29)
-		self._composer_path = None  # Cache for last working composer path
-
 		# Register handler to auto-reactivate browse mode if deactivated
 		treeInterceptorHandler.post_browseModeStateChange.register(self._onBrowseModeStateChange)
 
@@ -123,86 +120,6 @@ class AppModule(appModuleHandler.AppModule):
 					focus.treeInterceptor.passThrough = True
 		except:
 			pass
-
-	def _findElectronContainer(self, start_obj, depth=0, max_depth=8):
-		"""
-		Find the Electron container by traversing down the object tree.
-		The container is typically at: root.children[0].children[0].children[0].children[0].children[3]
-
-		This method searches more robustly instead of using hardcoded paths.
-
-		"""
-		if depth > max_depth:
-			return None
-
-		try:
-			children = getattr(start_obj, "children", None)
-			if not children:
-				return None
-
-			# Try the known index path first
-			if len(children) > 3:
-				# Common path: down to children[3]
-				if depth < 4:
-					candidate = children[0] if len(children) > 0 else None
-					if candidate:
-						result = self._findElectronContainer(candidate, depth + 1, max_depth)
-						if result:
-							return result
-
-			# If depth 4 and we have enough children, this might be the container
-			if depth == 4 and len(children) > 3:
-				return start_obj
-
-		except Exception:
-			pass
-
-		return None
-
-	def _cacheElectronContainerFromRoot(self, root_obj):
-		"""
-		Try to cache the Electron container using the known root prefix path.
-		Root prefix: [0, 0, 0, 0, 3]
-		"""
-		try:
-			obj = root_obj
-			for i in [0, 0, 0, 0, 3]:
-				children = getattr(obj, "children", []) or []
-				if i < len(children):
-					obj = children[i]
-				else:
-					return None
-			self._electron_container = obj
-			return obj
-		except Exception:
-			return None
-
-	def _getConversationListPrefix(self, container):
-		"""
-		Cache and return the conversation list prefix under the container.
-		Prefix path: container[4][1]
-		"""
-		if self._conv_list_prefix:
-			try:
-				_ = self._conv_list_prefix.children
-				return self._conv_list_prefix
-			except Exception:
-				self._conv_list_prefix = None
-
-		try:
-			children = getattr(container, "children", []) or []
-			if len(children) <= 4:
-				return None
-
-			lvl1 = children[4]
-			lvl1_children = getattr(lvl1, "children", []) or []
-			if len(lvl1_children) <= 1:
-				return None
-
-			self._conv_list_prefix = lvl1_children[1]
-			return self._conv_list_prefix
-		except Exception:
-			return None
 
 	def _getConversationListContainer(self):
 		"""
@@ -250,36 +167,39 @@ class AppModule(appModuleHandler.AppModule):
 			pass
 		return False
 
-	def _getElectronContainer(self):
-		"""
-		Get the cached Electron container.
-		If not cached yet, try to find it in the current tree.
-		"""
-		if self._electron_container:
+	def _findWhatsAppWindow(self):
+		"""Find WhatsApp WINDOW (R:52) from treeInterceptor. This is a stable reference point."""
+		if self._whatsapp_window:
 			try:
-				# Verify container is still valid
-				_ = self._electron_container.children
-				return self._electron_container
+				_ = self._whatsapp_window.children
+				return self._whatsapp_window
 			except Exception:
-				# Container became invalid, reset cache
-				self._electron_container = None
+				self._whatsapp_window = None
 
-		# Try to find it again
 		try:
-			fg_obj = api.getForegroundObject()
-			if fg_obj:
-				container = self._findElectronContainer(fg_obj)
-				if container:
-					self._electron_container = container
-					return container
-				# Fallback: try root prefix cache
-				container = self._cacheElectronContainerFromRoot(fg_obj)
-				if container:
-					return container
-		except Exception:
-			pass
+			focus = api.getFocusObject()
+			ti = getattr(focus, "treeInterceptor", None)
+			if not ti or not hasattr(ti, "rootNVDAObject"):
+				return None
+			root = ti.rootNVDAObject
 
-		return None
+			def search(obj, depth=0, max_depth=6):
+				if depth > max_depth:
+					return None
+				if _role(obj) == 52:  # WINDOW
+					return obj
+				for child in getattr(obj, "children", []) or []:
+					result = search(child, depth + 1, max_depth)
+					if result:
+						return result
+				return None
+
+			found = search(root)
+			if found:
+				self._whatsapp_window = found
+			return found
+		except Exception:
+			return None
 
 	def _shouldFilterChatList(self):
 		"""Read from cache (much faster than config.conf)"""
@@ -793,85 +713,34 @@ class AppModule(appModuleHandler.AppModule):
 	def script_focusComposer(self, gesture):
 		"""Alt+D: Focuses message input field."""
 		self._toggling = True
-		orig_pass_through = None
 		try:
-			focus = api.getFocusObject()
-			ti = getattr(focus, "treeInterceptor", None)
-
-			if not ti or not hasattr(ti, "rootNVDAObject"):
+			# Find WhatsApp WINDOW (R:52) as stable reference
+			wa_window = self._findWhatsAppWindow()
+			if not wa_window:
 				ui.message(_("Message composer not found"))
 				return
 
-			# Temporarily enable browse mode
-			orig_pass_through = ti.passThrough
-			ti.passThrough = False
+			# Navigate from R:52 to composer
+			path = [0, 0, 0, 0, 3, 4, 0, 3, 0, 0, 0, 2, 0]
+			obj = wa_window
+			valid = True
 
-			container = self._getElectronContainer()
+			for i in path:
+				children = getattr(obj, "children", []) or []
+				if i < len(children):
+					obj = children[i]
+				else:
+					valid = False
+					break
 
-			# Try to use cache first
-			if self._composer_path and container:
-				try:
-					obj = container
-					for i in self._composer_path:
-						children = getattr(obj, "children", []) or []
-						if i < len(children):
-							obj = children[i]
-						else:
-							raise Exception("Cache path invalid")
-					obj.setFocus()
-					success = True
-					return
-				except Exception:
-					self._composer_path = None
-
-			paths_to_try = []
-			if container:
-				paths_to_try.append((container, [5, 0, 3, 0, 0, 0, 2, 0]))
-			paths_to_try.append((ti.rootNVDAObject, [0, 0, 0, 0, 3, 5, 0, 3, 0, 0, 0, 2, 0]))
-
-			success = False
-			for root, path_indices in paths_to_try:
-				try:
-					obj = root
-					valid_path = True
-
-					for i in path_indices:
-						children = getattr(obj, "children", []) or []
-						if i < len(children):
-							obj = children[i]
-						else:
-							valid_path = False
-							break
-
-					if valid_path:
-						if root is ti.rootNVDAObject and not self._electron_container:
-							self._cacheElectronContainerFromRoot(root)
-
-						obj.setFocus()
-
-						if root is container:
-							self._composer_path = path_indices
-
-						success = True
-						break
-
-				except Exception:
-					continue
-
-			if not success:
+			if valid:
+				obj.setFocus()
+			else:
 				ui.message(_("Message composer not found"))
 		except Exception:
 			ui.message(_("Message composer not found"))
 		finally:
 			self._toggling = False
-			# Restore Focus Mode
-			if orig_pass_through is not None:
-				try:
-					focus = api.getFocusObject()
-					if focus and focus.treeInterceptor:
-						focus.treeInterceptor.passThrough = True
-				except:
-					pass
 
 	def event_gainFocus(self, obj, nextHandler):
 		"""Handle focus gain events in WhatsApp."""
@@ -1103,6 +972,7 @@ class AppModule(appModuleHandler.AppModule):
 		except Exception:
 			pass
 
+
 	@scriptHandler.script(
 		description=_("Go to WhatsApp conversation list"),
 		gesture="kb:alt+1"
@@ -1110,91 +980,54 @@ class AppModule(appModuleHandler.AppModule):
 	def script_goToConversationList(self, gesture):
 		"""Alt+1: Go to WhatsApp conversation list."""
 		self._toggling = True
-		# Store original passThrough state
-		orig_pass_through = None
-		success = False
 		try:
+			# Try cached cell first
 			cached_cell = self._getConversationListCell()
 			if cached_cell:
 				cached_cell.setFocus()
-				success = True
 				return
-			ti = None
 
-			container = self._getElectronContainer()
-			paths_to_try = []
-			if container:
-				cached_list = self._getConversationListContainer()
-				if cached_list:
-					paths_to_try.append((cached_list, []))
+			# Try cached container
+			cached_list = self._getConversationListContainer()
+			if cached_list:
+				cached_list.setFocus()
+				return
+
+			# Find WhatsApp WINDOW (R:52) as stable reference
+			wa_window = self._findWhatsAppWindow()
+			if not wa_window:
+				ui.message(_("Conversation list not found"))
+				return
+
+			# Navigate from R:52 to conversation list
+			path = [0, 0, 0, 0, 3, 3, 1, 3, 0, 0, 0]
+			obj = wa_window
+			valid = True
+
+			for i in path:
+				children = getattr(obj, "children", []) or []
+				if i < len(children):
+					obj = children[i]
 				else:
-					prefix = self._getConversationListPrefix(container)
-					if prefix:
-						paths_to_try.append((prefix, [2, 0, 0, 0]))
-					else:
-						paths_to_try.append((container, [4, 1, 2, 0, 0, 0]))
+					valid = False
+					break
+
+			if valid and _role(obj) == 28:
+				self._setConversationListContainer(obj)
+
+				cell = self._findFirstCell(obj)
+				if cell:
+					self._setConversationListCell(cell)
+					cell.setFocus()
+				else:
+					obj.setFocus()
 			else:
-				focus = api.getFocusObject()
-				ti = getattr(focus, "treeInterceptor", None)
-
-				if not ti or not hasattr(ti, "rootNVDAObject"):
-					ui.message(_("Conversation list not found"))
-					return
-
-				# Temporarily enable browse mode
-				orig_pass_through = ti.passThrough
-				ti.passThrough = False
-				paths_to_try.append((ti.rootNVDAObject, [0, 0, 0, 0, 3, 4, 1, 2, 0, 0, 0]))
-
-			for root, path_indices in paths_to_try:
-				try:
-					obj = root
-					valid_path = True
-
-					for i in path_indices:
-						children = getattr(obj, "children", []) or []
-						if i < len(children):
-							obj = children[i]
-						else:
-							valid_path = False
-							break
-
-					if valid_path and _role(obj) == 28:
-						if ti and root is ti.rootNVDAObject and not self._electron_container:
-							self._cacheElectronContainerFromRoot(root)
-						if root is container and not self._conv_list_prefix:
-							self._getConversationListPrefix(container)
-						self._setConversationListContainer(obj)
-
-						cell = self._findFirstCell(obj)
-						if cell:
-							self._setConversationListCell(cell)
-							cell.setFocus()
-							success = True
-							break
-						else:
-							obj.setFocus()
-							success = True
-							break
-
-				except Exception:
-					continue
-
-			if not success:
 				ui.message(_("Conversation list not found"))
 
 		except Exception:
 			ui.message(_("Conversation list not found"))
 		finally:
 			self._toggling = False
-			# Restore Focus Mode
-			if orig_pass_through is not None:
-				try:
-					focus = api.getFocusObject()
-					if focus and focus.treeInterceptor:
-						focus.treeInterceptor.passThrough = True
-				except:
-					pass
 
 	@scriptHandler.script(
 		description=_("Go to WhatsApp message list"),
@@ -1203,44 +1036,30 @@ class AppModule(appModuleHandler.AppModule):
 	def script_goToMessageList(self, gesture):
 		"""Alt+2: Go to WhatsApp message list."""
 		self._toggling = True
-		orig_pass_through = None
 		try:
-			focus = api.getFocusObject()
-			ti = getattr(focus, "treeInterceptor", None)
-
-			if not ti or not hasattr(ti, "rootNVDAObject"):
+			# Find WhatsApp WINDOW (R:52) as stable reference
+			wa_window = self._findWhatsAppWindow()
+			if not wa_window:
 				ui.message(_("Message list not found"))
 				return
 
-			# Temporarily enable browse mode
-			orig_pass_through = ti.passThrough
-			ti.passThrough = False
+			# Navigate from R:52 to message area
+			# Multiple paths needed - structure varies per conversation
+			paths_to_try = [
+				[0, 0, 0, 0, 3, 4, 0, 2, 2, 1],
+				[0, 0, 0, 0, 3, 4, 0, 2, 1, 1],
+				[0, 0, 0, 0, 3, 4, 0, 2, 2, 0],
+				[0, 0, 0, 0, 3, 4, 0, 2, 1, 0],
+				[0, 0, 0, 0, 3, 5, 0, 2, 2, 1],
+				[0, 0, 0, 0, 3, 5, 0, 2, 1, 1],
+			]
 
-			container = self._getElectronContainer()
-			paths_to_try = []
-			if container:
-				paths_to_try.extend([
-					(container, [5, 0, 2, 2, 0]),  # 0
-					(container, [5, 0, 2, 1, 0]),  # 1
-					(container, [5, 0, 2, 1, 1]),  # 4
-					(container, [5, 0, 2, 2, 1]),  # 5 - PRINCIPAL
-					(container, [5, 0, 3, 2, 0]),  # 6
-					(container, [5, 0, 3, 2, 1]),  # 11 - problemática
-				])
-			paths_to_try.extend([
-				(ti.rootNVDAObject, [0, 0, 0, 0, 3, 5, 0, 2, 2, 0]),  # fallback
-				(ti.rootNVDAObject, [0, 0, 0, 0, 3, 5, 0, 2, 1, 1]),  # fallback
-				(ti.rootNVDAObject, [0, 0, 0, 0, 3, 5, 0, 2, 2, 1]),  # fallback
-				(ti.rootNVDAObject, [0, 0, 0, 0, 3, 5, 0, 3, 2, 1]),  # fallback problemática
-			])
-
-			# Try all paths and pick the one with most children (real message list)
 			best_obj = None
 			max_children = -1
 
-			for root, path_indices in paths_to_try:
+			for path_indices in paths_to_try:
 				try:
-					obj = root
+					obj = wa_window
 					valid_path = True
 
 					for i in path_indices:
@@ -1254,20 +1073,16 @@ class AppModule(appModuleHandler.AppModule):
 					if not valid_path:
 						continue
 
-					# Count children - message list should have many
 					obj_children = getattr(obj, "children", []) or []
 					child_count = len(obj_children)
 
 					if child_count > max_children:
 						max_children = child_count
 						best_obj = obj
-						if root is ti.rootNVDAObject and not self._electron_container:
-							self._cacheElectronContainerFromRoot(root)
 
 				except Exception:
 					continue
 
-			# Focus the best candidate
 			if best_obj:
 				best_obj.setFocus()
 			else:
@@ -1277,14 +1092,7 @@ class AppModule(appModuleHandler.AppModule):
 			ui.message(_("Message list not found"))
 		finally:
 			self._toggling = False
-			# Restore Focus Mode
-			if orig_pass_through is not None:
-				try:
-					focus = api.getFocusObject()
-					if focus and focus.treeInterceptor:
-						focus.treeInterceptor.passThrough = True
-				except:
-					pass
+
 
 	@scriptHandler.script(
 		description=_("Toggle phone number filtering in conversation list")
