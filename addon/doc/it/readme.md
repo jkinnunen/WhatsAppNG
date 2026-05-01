@@ -87,6 +87,20 @@ Configura i tasti rapidi in:
 
 ## Cronologia delle modifiche
 
+### Versione 1.8.0 (2026-05-01)
+
+**Aggiunto:**
+- Finestra di donazione durante l'installazione del componente aggiuntivo
+
+**Modificato:**
+- Navigazione (Alt+1, Alt+2, Alt+D) più resistente alle modifiche dell'interfaccia di WhatsApp
+
+**Corretto:**
+- Enter e Shift+Enter non funzionavano con il filtro suggerimenti d'uso disattivato
+- Tasto Enter non funzionava nelle finestre di dialogo dei file e nell'elenco conversazioni
+- Interruttore del filtro numeri di telefono nell'elenco conversazioni non si aggiornava correttamente
+- Migliorata traduzione e documentazione finlandese
+
 ### Versione 1.7.1 (2026-04-10)
 
 **Corretto:**

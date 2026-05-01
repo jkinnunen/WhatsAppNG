@@ -87,6 +87,20 @@ Konfigurieren Sie Tastenkürzel unter:
 
 ## Änderungsprotokoll
 
+### Version 1.8.0 (2026-05-01)
+
+**Hinzugefügt:**
+- Spenden-Dialog bei der Add-on-Installation
+
+**Geändert:**
+- Navigation (Alt+1, Alt+2, Alt+D) widerstandsfähiger gegen WhatsApp-UI-Änderungen
+
+**Behoben:**
+- Enter und Shift+Enter funktionierten nicht bei deaktiviertem Hinweis-Filter
+- Enter-Taste funktionierte nicht in Dateidialogen und Konversationsliste
+- Telefonnummern-Filter in Konversationsliste wurde nach Umschalten nicht korrekt aktualisiert
+- Verbesserte finnische Übersetzung und Dokumentation
+
 ### Version 1.7.1 (2026-04-10)
 
 **Behoben:**

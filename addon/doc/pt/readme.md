@@ -87,6 +87,20 @@ Configure os atalhos em:
 
 ## Registro de Alterações
 
+### Versão 1.8.0 (2026-05-01)
+
+**Adicionado:**
+- Diálogo de doação durante a instalação do extra
+
+**Alterado:**
+- Navegação (Alt+1, Alt+2, Alt+D) mais resistente a mudanças na interface do WhatsApp
+
+**Corrigido:**
+- Enter e Shift+Enter não funcionavam com o filtro de dicas de uso desativado
+- Tecla Enter não funcionava em diálogos de ficheiros e lista de conversas
+- Alternância do filtro de números na lista de conversas não atualizava corretamente
+- Melhorada tradução e documentação em finlandês
+
 ### Versão 1.7.1 (2026-04-10)
 
 **Corrigido:**

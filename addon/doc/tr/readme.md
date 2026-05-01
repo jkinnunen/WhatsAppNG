@@ -88,6 +88,20 @@ Kısayolları şuradan yapılandırın:
 
 ## Değişiklik Günlüğü
 
+### Sürüm 1.8.0 (2026-05-01)
+
+**Eklendi:**
+- Eklenti kurulumu sırasında bağış iletişim kutusu
+
+**Değiştirildi:**
+- Navigasyon (Alt+1, Alt+2, Alt+D) WhatsApp arayüz değişikliklerine karşı daha dayanıklı
+
+**Düzeltildi:**
+- Kullanım ipucu filtresi devre dışıyken Enter ve Shift+Enter çalışmıyordu
+- Enter tuşu dosya diyaloglarında ve konuşma listesinde çalışmıyordu
+- Konuşma listesindeki telefon numarası filtresi geçişi doğru güncellenmiyordu
+- Finçe çeviri ve belgeler iyileştirildi
+
 ### Sürüm 1.7.1 (2026-04-10)
 
 **Düzeltildi:**

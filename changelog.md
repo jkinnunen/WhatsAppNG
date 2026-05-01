@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2026-05-01
+
+### Added
+- **Donation dialog**: Shown during add-on installation to support development
+
+### Changed
+- **Navigation refactored**: Alt+1, Alt+2, Alt+D now use a stable reference point, making them more resilient to WhatsApp UI changes
+
+### Fixed
+- **Enter and Shift+Enter**: Not working when usage hints filter is disabled
+- **Enter key**: Not working in file dialogs and conversation list
+- **Toggle phone filtering**: In conversation list not updating correctly after toggle
+- **Finnish translation**: Improved translation and documentation
+
 ## [1.7.1] - 2026-04-10
 
 ### Fixed

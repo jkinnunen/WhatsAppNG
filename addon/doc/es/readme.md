@@ -87,7 +87,21 @@ Configura los atajos en:
 
 ## Historial de cambios
 
-### Versión 1.7.0 (2026-04-10)
+### Versión 1.8.0 (2026-05-01)
+
+**Añadido:**
+- Diálogo de donación durante la instalación del complemento
+
+**Cambiado:**
+- Navegación (Alt+1, Alt+2, Alt+D) más resistente a cambios en la interfaz de WhatsApp
+
+**Corregido:**
+- Enter y Shift+Enter no funcionaban con el filtro de sugerencias de uso desactivado
+- Tecla Enter no funcionaba en diálogos de archivos y lista de conversaciones
+- Alternancia del filtro de números en la lista de conversaciones no se actualizaba correctamente
+- Mejorada la traducción y documentación en finlandés
+
+### Versión 1.7.1 (2026-04-10)
 
 **Corregido:**
 - Orden de reproducción de tecla Enter: Corregido problema donde los mensajes de audio ya no se reproducían con la tecla Enter
