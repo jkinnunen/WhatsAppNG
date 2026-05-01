@@ -928,9 +928,9 @@ class AppModule(appModuleHandler.AppModule):
 		if "whatsapp" not in window_title.lower():
 			return False
 
-		# The focus itself must be LISTITEM (no longer checking for SECTION/role 86)
+		# Accept LISTITEM (hints filtered) or SECTION/86 (hints not filtered)
 		focus_role = _role(focus)
-		if focus_role != controlTypes.Role.LISTITEM:
+		if focus_role != controlTypes.Role.LISTITEM and focus_role != 86:
 			return False
 
 		# And does NOT have TABLE as ancestor
